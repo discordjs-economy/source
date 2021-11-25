@@ -11,8 +11,7 @@
 <span><strong>[🙂] TypeScript Support</strong></span> <br />
 
 ## Installing
-<span><strong>Since the module has not been released yet, it is not yet available on NPMjs. <br />
-But you can become a beta test participant and install the module through the command "npm i bad-boy-discord/discordjs-economy"</strong></span>
+<span><code>npm i @badboy-discord/discordjs-economy</code></span>
 
 ## This module uses
 <span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />
