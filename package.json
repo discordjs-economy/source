@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bad-boy-discord/discordjs-economy.git"
+    "url": "git+https://github.com/discordjs-economy/source.git"
   },
   "keywords": [
     "discord",
@@ -21,9 +21,9 @@
   "author": "WhyMe#1126",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bad-boy-discord/discordjs-economy/issues"
+    "url": "https://github.com/discordjs-economy/source/issues"
   },
-  "homepage": "https://github.com/bad-boy-discord/discordjs-economy#readme",
+  "homepage": "https://github.com/discordjs-economy/source#readme",
   "dependencies": {
     "enmap": "^5.8.7"
   },
