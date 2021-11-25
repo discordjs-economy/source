@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637866117026
+  "date": 1637866152929
  },
  "custom": {
   "general": {
@@ -11,7 +11,7 @@
     "README": {
      "name": "Welcome",
      "type": "md",
-     "content": "## Welcome!\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n### Warning!\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n<span><strong>Since the module has not been released yet, it is not yet available on NPMjs. <br />\nBut you can become a beta test participant and install the module through the command \"npm i bad-boy-discord/discordjs-economy\"</strong></span>\n\n## This module uses\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>",
+     "content": "## Welcome!\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n### Warning!\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n<span><code>npm i @badboy-discord/discordjs-economy</code></span>\n\n## This module uses\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>",
      "path": "pages/general/README.md"
     },
     "changelog": {
