@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637957956191
+  "date": 1637958279586
  },
  "custom": {
   "general": {
@@ -1335,7 +1335,7 @@
       ]
      ],
      "meta": {
-      "line": 96,
+      "line": 93,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1344,6 +1344,7 @@
      "name": "init",
      "description": "Method that Initializing Module.",
      "access": "private",
+     "async": true,
      "returns": [
       [
        [
@@ -1357,7 +1358,7 @@
       ]
      ],
      "meta": {
-      "line": 129,
+      "line": 126,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1383,7 +1384,7 @@
       ]
      ],
      "meta": {
-      "line": 164,
+      "line": 163,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -2107,7 +2108,7 @@
     }
    ],
    "meta": {
-    "line": 196,
+    "line": 195,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2168,7 +2169,7 @@
     }
    ],
    "meta": {
-    "line": 205,
+    "line": 204,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2229,7 +2230,7 @@
     }
    ],
    "meta": {
-    "line": 213,
+    "line": 212,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2307,7 +2308,7 @@
     }
    ],
    "meta": {
-    "line": 221,
+    "line": 220,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2358,7 +2359,7 @@
     }
    ],
    "meta": {
-    "line": 231,
+    "line": 230,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2444,7 +2445,7 @@
     }
    ],
    "meta": {
-    "line": 239,
+    "line": 238,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2520,7 +2521,7 @@
     }
    ],
    "meta": {
-    "line": 250,
+    "line": 249,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2571,7 +2572,7 @@
     }
    ],
    "meta": {
-    "line": 260,
+    "line": 259,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2622,7 +2623,7 @@
     }
    ],
    "meta": {
-    "line": 268,
+    "line": 267,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2662,7 +2663,7 @@
     }
    ],
    "meta": {
-    "line": 276,
+    "line": 275,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2702,7 +2703,7 @@
     }
    ],
    "meta": {
-    "line": 283,
+    "line": 282,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2743,7 +2744,7 @@
     }
    ],
    "meta": {
-    "line": 290,
+    "line": 289,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2805,7 +2806,7 @@
     }
    ],
    "meta": {
-    "line": 297,
+    "line": 296,
     "file": "Economy.ts",
     "path": "src/classes"
    }
