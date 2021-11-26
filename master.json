@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637945466111
+  "date": 1637955394428
  },
  "custom": {
   "general": {
@@ -17,7 +17,7 @@
     "changelog": {
      "name": "ChangeLog",
      "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Method:</strong> <br />\n- <strong>Fixed some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>",
      "path": "pages/general/changelog.md"
     }
    }
@@ -1152,7 +1152,7 @@
       ]
      ],
      "meta": {
-      "line": 199,
+      "line": 200,
       "file": "DBManager.ts",
       "path": "src/classes"
      }
@@ -1195,7 +1195,7 @@
       ]
      ],
      "meta": {
-      "line": 30,
+      "line": 38,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1211,7 +1211,23 @@
       ]
      ],
      "meta": {
-      "line": 38,
+      "line": 46,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "version",
+     "description": "Module Version",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 53,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1227,7 +1243,7 @@
       ]
      ],
      "meta": {
-      "line": 45,
+      "line": 60,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1243,7 +1259,7 @@
       ]
      ],
      "meta": {
-      "line": 52,
+      "line": 67,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1259,7 +1275,23 @@
       ]
      ],
      "meta": {
-      "line": 59,
+      "line": 74,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "items",
+     "description": "Inventory Manager",
+     "type": [
+      [
+       [
+        "ItemsManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 81,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1303,15 +1335,433 @@
       ]
      ],
      "meta": {
-      "line": 67,
+      "line": 94,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "init",
+     "description": "Method that Initializing Module.",
+     "access": "private",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 127,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "checkVersion",
+     "description": "Method that Check Module for Update.",
+     "access": "private",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 162,
       "file": "Economy.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 18,
+    "line": 26,
     "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ItemsManager",
+   "description": "Items Manager Class",
+   "construct": {
+    "name": "ItemsManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 25,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 33,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "balance",
+     "description": "Balance Manager",
+     "type": [
+      [
+       [
+        "BalanceManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "buy",
+     "description": "Method that Buys an Item from Shop.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 48,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "sell",
+     "description": "Method that Sells an Item from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 103,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "use",
+     "description": "Method that Uses an Item from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 144,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "get",
+     "description": "Method that Returns an Item Data from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 190,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "all",
+     "description": "Method that Returns All the Items from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        ">|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 233,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 12,
+    "file": "ItemsManager.ts",
     "path": "src/classes"
    }
   },
@@ -1645,7 +2095,7 @@
     }
    ],
    "meta": {
-    "line": 101,
+    "line": 193,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1706,7 +2156,7 @@
     }
    ],
    "meta": {
-    "line": 109,
+    "line": 201,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1767,7 +2217,7 @@
     }
    ],
    "meta": {
-    "line": 117,
+    "line": 209,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1826,10 +2276,26 @@
        ]
       ]
      ]
+    },
+    {
+     "name": "inventory",
+     "description": "User Inventory",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyUserInventory",
+        ">"
+       ]
+      ]
+     ]
     }
    ],
    "meta": {
-    "line": 125,
+    "line": 217,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1880,7 +2346,93 @@
     }
    ],
    "meta": {
-    "line": 134,
+    "line": 227,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserInventory",
+   "description": "Economy User Rewards Data",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "itemID",
+     "description": "Item ID",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "name",
+     "description": "Item Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Item Description",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "cost",
+     "description": "Item Cost",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "role",
+     "description": "Item Role",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "date",
+     "description": "Date of Purchase",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 235,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1956,7 +2508,7 @@
     }
    ],
    "meta": {
-    "line": 142,
+    "line": 246,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2007,7 +2559,7 @@
     }
    ],
    "meta": {
-    "line": 152,
+    "line": 256,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2058,7 +2610,7 @@
     }
    ],
    "meta": {
-    "line": 160,
+    "line": 264,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2098,7 +2650,7 @@
     }
    ],
    "meta": {
-    "line": 168,
+    "line": 272,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2138,7 +2690,48 @@
     }
    ],
    "meta": {
-    "line": 175,
+    "line": 279,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ErrorObject",
+   "description": "Error Object",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "status",
+     "description": "true or false",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "message",
+     "description": "Error Message",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 286,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2200,7 +2793,7 @@
     }
    ],
    "meta": {
-    "line": 182,
+    "line": 293,
     "file": "Economy.ts",
     "path": "src/classes"
    }
