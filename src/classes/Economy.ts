@@ -8,7 +8,6 @@ import { ItemsManager } from "./ItemsManager";
 import { ShopManager } from "./ShopManager";
 
 // Other
-import fetch from 'node-fetch';
 import colors from "colors";
 import update from '../update.json';
 
@@ -167,6 +166,7 @@ export class Economy {
      */
     private checkVersion(): Promise<boolean|string> {
         return new Promise(async(res, rej) => {
+            var fetch = await import('node-fetch').then((v) => v.default);
             var data = await fetch('https://registry.npmjs.com/@badboy-discord/discordjs-economy').then((res) => res.json());
             var moduleVersion = data['dist-tags']['latest'];
 
