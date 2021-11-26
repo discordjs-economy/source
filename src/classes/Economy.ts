@@ -87,10 +87,7 @@ export class Economy {
          */
         this.items = new ItemsManager(this.options);
 
-        async () => {
-            await this.init();
-            await this.checkVersion();
-        }
+        this.init();
     }
 
     /**
@@ -132,7 +129,9 @@ export class Economy {
      * @private
      * @returns {Promise<boolean>} 
      */
-    private init(): Promise<boolean> {
+    private async init(): Promise<boolean> {
+        await this.checkVersion();
+        
         return new Promise(async(res, rej) => {
             var economyOBJ = this.database.database.keys();
             var guildIDS: string[] = [];
@@ -140,7 +139,7 @@ export class Economy {
             for(var name of economyOBJ) {
                 var guildID = name.toString().slice('economy-'.length);
                 guildIDS.push(guildID);
-            };
+            }
 
             for(var guildID of guildIDS) {
                 var data = await this.database.get(guildID);
@@ -155,7 +154,7 @@ export class Economy {
                         this.database.set(guildID, data);
                     }
                 }
-            };
+            }
 
             return res(true);
         });
