@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637956728550
+  "date": 1637957455284
  },
  "custom": {
   "general": {
@@ -17,7 +17,7 @@
     "changelog": {
      "name": "ChangeLog",
      "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>",
      "path": "pages/general/changelog.md"
     }
    }
@@ -1211,7 +1211,7 @@
       ]
      ],
      "meta": {
-      "line": 46,
+      "line": 48,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1227,7 +1227,7 @@
       ]
      ],
      "meta": {
-      "line": 53,
+      "line": 55,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1243,7 +1243,7 @@
       ]
      ],
      "meta": {
-      "line": 60,
+      "line": 62,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1259,7 +1259,7 @@
       ]
      ],
      "meta": {
-      "line": 67,
+      "line": 69,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1275,7 +1275,7 @@
       ]
      ],
      "meta": {
-      "line": 74,
+      "line": 76,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1291,7 +1291,7 @@
       ]
      ],
      "meta": {
-      "line": 81,
+      "line": 83,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1335,7 +1335,7 @@
       ]
      ],
      "meta": {
-      "line": 94,
+      "line": 96,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1357,7 +1357,7 @@
       ]
      ],
      "meta": {
-      "line": 127,
+      "line": 129,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1383,7 +1383,7 @@
       ]
      ],
      "meta": {
-      "line": 162,
+      "line": 164,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -2083,6 +2083,18 @@
      ]
     },
     {
+     "name": "checkVersion",
+     "description": "Version Control Status",
+     "optional": true,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
      "name": "rewards",
      "description": "Economy Rewards",
      "type": [
@@ -2095,7 +2107,7 @@
     }
    ],
    "meta": {
-    "line": 193,
+    "line": 197,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2156,7 +2168,7 @@
     }
    ],
    "meta": {
-    "line": 201,
+    "line": 206,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2217,7 +2229,7 @@
     }
    ],
    "meta": {
-    "line": 209,
+    "line": 214,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2295,7 +2307,7 @@
     }
    ],
    "meta": {
-    "line": 217,
+    "line": 222,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2346,7 +2358,7 @@
     }
    ],
    "meta": {
-    "line": 227,
+    "line": 232,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2432,7 +2444,7 @@
     }
    ],
    "meta": {
-    "line": 235,
+    "line": 240,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2508,7 +2520,7 @@
     }
    ],
    "meta": {
-    "line": 246,
+    "line": 251,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2559,7 +2571,7 @@
     }
    ],
    "meta": {
-    "line": 256,
+    "line": 261,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2610,7 +2622,7 @@
     }
    ],
    "meta": {
-    "line": 264,
+    "line": 269,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2650,7 +2662,7 @@
     }
    ],
    "meta": {
-    "line": 272,
+    "line": 277,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2690,7 +2702,7 @@
     }
    ],
    "meta": {
-    "line": 279,
+    "line": 284,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2731,7 +2743,7 @@
     }
    ],
    "meta": {
-    "line": 286,
+    "line": 291,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2793,7 +2805,7 @@
     }
    ],
    "meta": {
-    "line": 293,
+    "line": 298,
     "file": "Economy.ts",
     "path": "src/classes"
    }
