@@ -1,0 +1,2816 @@
+{
+ "meta": {
+  "generator": "0.11.1",
+  "format": 22,
+  "date": 1637958632701
+ },
+ "custom": {
+  "general": {
+   "name": "General",
+   "files": {
+    "README": {
+     "name": "Welcome",
+     "type": "md",
+     "content": "## Welcome!\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n<strong>[Documentation](https://djs-economy.js.org/) | [Support Server](https://discord.gg/9Ps78AGadm)</strong>\n\n### Warning!\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n<span><code>npm i @badboy-discord/discordjs-economy</code></span> <br />\n<span><code>yarn add @badboy-discord/discordjs-economy</code></span>\n\n## This module uses\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>",
+     "path": "README.md"
+    },
+    "changelog": {
+     "name": "ChangeLog",
+     "type": "md",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>",
+     "path": "pages/general/changelog.md"
+    }
+   }
+  }
+ },
+ "classes": [
+  {
+   "name": "BalanceManager",
+   "description": "Balance Class",
+   "construct": {
+    "name": "BalanceManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 22,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 30,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "add",
+     "description": "Method that Adds Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Add",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 38,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "subtract",
+     "description": "Method that Subtracts Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Subtract",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 76,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "set",
+     "description": "Method that Sets Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 114,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "get",
+     "description": "Method that Returns User Balance.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "PrettyObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 152,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 9,
+    "file": "BalanceManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "BankManager",
+   "description": "Bank Class",
+   "construct": {
+    "name": "BankManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 22,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 30,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "add",
+     "description": "Method that Adds Bank Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Add",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 38,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "subtract",
+     "description": "Method that Subtracts Bank Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Subtract",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 76,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "set",
+     "description": "Method that Sets Bank Balance to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 114,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "get",
+     "description": "Method that Returns User Bank.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "PrettyObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 154,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "deposit",
+     "description": "Method that Deposits to Bank.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Deposit",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 177,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "withdraw",
+     "description": "Method that Withdraws from Bank.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount to Withdraw",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 230,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 9,
+    "file": "BankManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "DBManager",
+   "description": "Database Manager",
+   "construct": {
+    "name": "DBManager",
+    "params": [
+     {
+      "name": "Options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 22,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "Enmap",
+        "<"
+       ],
+       [
+        "string",
+        ", "
+       ],
+       [
+        "EconomyGuildData",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 30,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "get",
+     "description": "Method that Returns Economy Guild Data from Database",
+     "params": [
+      {
+       "name": "id",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "id"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildData",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 41,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "set",
+     "description": "Method that Changes Something from Database",
+     "params": [
+      {
+       "name": "id",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "id"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "any"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 56,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "setProp",
+     "description": "Method that Sets Value to Key from Database",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "Discord User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "key",
+       "description": "Property Name",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 72,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "push",
+     "description": "Method that Pushes Something from Database",
+     "params": [
+      {
+       "name": "id",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "id"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Push",
+       "type": [
+        [
+         [
+          "any"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 97,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "add",
+     "description": "Method that Adds Value to Key from Database",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "Discord User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "key",
+       "description": "Property Name",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 113,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "subtract",
+     "description": "Method that Subtracts Value from Key from Database",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "Discord User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "key",
+       "description": "Property Name",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Set",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 138,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "createUser",
+     "description": "Method that Creates User Data",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "Discord User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyUserData",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 163,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "createGuild",
+     "description": "Method that Creates Guild Data",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Discord Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildData",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 200,
+      "file": "DBManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 9,
+    "file": "DBManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Economy",
+   "description": "Economy Class",
+   "construct": {
+    "name": "Economy",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 38,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 48,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "version",
+     "description": "Module Version",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 55,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "balance",
+     "description": "Balance Manager",
+     "type": [
+      [
+       [
+        "BalanceManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 62,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "bank",
+     "description": "Bank Manager",
+     "type": [
+      [
+       [
+        "BankManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 69,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "shop",
+     "description": "Shop Manager",
+     "type": [
+      [
+       [
+        "ShopManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 76,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "items",
+     "description": "Inventory Manager",
+     "type": [
+      [
+       [
+        "ItemsManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 83,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "leaderboard",
+     "description": "Method that Returns Guild Balance Leaderboard by Balance.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "Leaderboard",
+        ">>"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 93,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "init",
+     "description": "Method that Initializing Module.",
+     "access": "private",
+     "async": true,
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 126,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "checkVersion",
+     "description": "Method that Check Module for Update.",
+     "access": "private",
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "string",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 163,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 26,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ItemsManager",
+   "description": "Items Manager Class",
+   "construct": {
+    "name": "ItemsManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 25,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 33,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "balance",
+     "description": "Balance Manager",
+     "type": [
+      [
+       [
+        "BalanceManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "buy",
+     "description": "Method that Buys an Item from Shop.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 48,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "sell",
+     "description": "Method that Sells an Item from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 103,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "use",
+     "description": "Method that Uses an Item from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 144,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "get",
+     "description": "Method that Returns an Item Data from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        "|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 190,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "all",
+     "description": "Method that Returns All the Items from Inventory.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        ">|"
+       ],
+       [
+        "ErrorObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 233,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 12,
+    "file": "ItemsManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ShopManager",
+   "description": "Balance Class",
+   "construct": {
+    "name": "ShopManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 24,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 32,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "balance",
+     "description": "Balance Manager",
+     "type": [
+      [
+       [
+        "BalanceManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 39,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "create",
+     "description": "Method that Creates Item for Shop",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "data",
+       "type": [
+        [
+         [
+          "EconomyGuildShopItem"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 47,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "delete",
+     "description": "Method that Deletes Item from Shop",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 76,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "update",
+     "description": "Method that Change Something in Item from Shop",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "itemID",
+       "description": "Item ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "key",
+       "description": "Key to Change",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "value",
+       "description": "Value to Change",
+       "type": [
+        [
+         [
+          "any"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "EconomyGuildShopItem",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 99,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "all",
+     "description": "Method that Returns All the Items from Shop",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyGuildShopItem",
+        ">>"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 128,
+      "file": "ShopManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 11,
+    "file": "ShopManager.ts",
+    "path": "src/classes"
+   }
+  }
+ ],
+ "interfaces": [],
+ "typedefs": [
+  {
+   "name": "Options",
+   "description": "Module Options",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "DBName",
+     "description": "Economy Database Name",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "DBPath",
+     "description": "Economy Database Path",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "checkVersion",
+     "description": "Version Control Status",
+     "optional": true,
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "rewards",
+     "description": "Economy Rewards",
+     "type": [
+      [
+       [
+        "Rewards"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 195,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Rewards",
+   "description": "Economy Rewards",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "daily",
+     "description": "Daily Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "weekly",
+     "description": "Weekly Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "work",
+     "description": "Work Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ],
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "number",
+        ">"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 204,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyGuildData",
+   "description": "Economy Guild Data",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "users",
+     "description": "Daily Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "weekly",
+     "description": "Weekly Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "work",
+     "description": "Work Reward",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ],
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "number",
+        ">"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 212,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserData",
+   "description": "Economy User Data",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "id",
+     "description": "User ID",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "balance",
+     "description": "User Balance",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "bank",
+     "description": "User Bank",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "rewards",
+     "description": "User Rewards",
+     "type": [
+      [
+       [
+        "EconomyUserRewardsData"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "inventory",
+     "description": "User Inventory",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyUserInventory",
+        ">"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 220,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserRewardsData",
+   "description": "Economy User Rewards Data",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "daily",
+     "description": "Daily Reward Collected",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "weekly",
+     "description": "Weekly Reward Collected",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "work",
+     "description": "Work Reward Collected",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 230,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserInventory",
+   "description": "Economy User Rewards Data",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "itemID",
+     "description": "Item ID",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "name",
+     "description": "Item Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Item Description",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "cost",
+     "description": "Item Cost",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "role",
+     "description": "Item Role",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "date",
+     "description": "Date of Purchase",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 238,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyGuildShopItem",
+   "description": "Economy Guild Shop Item",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "id",
+     "description": "Item ID",
+     "optional": true,
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "name",
+     "description": "Item Name",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "description",
+     "description": "Item Description",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "cost",
+     "description": "Item Cost",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "role",
+     "description": "Item Role",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 249,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "BalanceObject",
+   "description": "Balance Object for BalanceManager",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "amount",
+     "description": "Amount",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "oldBalance",
+     "description": "User Balance Before",
+     "type": [
+      [
+       [
+        "PrettyObject"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "newBalance",
+     "description": "User Balance After",
+     "type": [
+      [
+       [
+        "PrettyObject"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 259,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "DepositObject",
+   "description": "Deposit Object for BankManager",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "amount",
+     "description": "Amount",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "balance",
+     "description": "User Balance",
+     "type": [
+      [
+       [
+        "DepositPrettyObject"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "bank",
+     "description": "User Bank",
+     "type": [
+      [
+       [
+        "DepositPrettyObject"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 267,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "DepositPrettyObject",
+   "description": "Pretty Object for BalanceObject",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "old",
+     "description": "Before Deposit",
+     "type": [
+      [
+       [
+        "PrettyObject"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "new",
+     "description": "After Deposit",
+     "type": [
+      [
+       [
+        "PrettyObject"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 275,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "PrettyObject",
+   "description": "Pretty Object for BalanceObject",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "original",
+     "description": "User Balance Before Formatting",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "pretty",
+     "description": "User Balance After Formatting",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 282,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ErrorObject",
+   "description": "Error Object",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "status",
+     "description": "true or false",
+     "type": [
+      [
+       [
+        "boolean"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "message",
+     "description": "Error Message",
+     "optional": true,
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 289,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Leaderboard",
+   "description": "Guild Leaderboard",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "userID",
+     "description": "User ID",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "balance",
+     "description": "User Balance",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "bank",
+     "description": "User Bank",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "rank",
+     "description": "User Rank in Leaderboard",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 296,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  }
+ ],
+ "externals": []
+}
