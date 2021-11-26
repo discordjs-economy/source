@@ -62,3 +62,10 @@ export interface PrettyObject {
     value: number;
     pretty: string;
 }
+
+export interface Leaderboard {
+    userID: string;
+    balance: number;
+    bank: number;
+    rank: number;
+}

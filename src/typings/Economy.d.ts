@@ -1,4 +1,4 @@
-import { Options } from '../Constants';
+import { Leaderboard, Options } from '../Constants';
 import { DBManager } from './DBManager';
 import { BalanceManager } from './BalanceManager';
 import { BankManager } from './BankManager';
@@ -15,4 +15,8 @@ export declare interface Economy {
 
 export declare class Economy {
     constructor(options: Options);
+
+    leaderboard(
+        guildID: string
+    ): Promise<boolean|Leaderboard[]>;
 }

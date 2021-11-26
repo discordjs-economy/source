@@ -1,4 +1,4 @@
-import { Options } from "../Constants";
+import { Leaderboard, Options } from "../Constants";
 
 // Managers
 import { BalanceManager } from "./BalanceManager";
@@ -63,6 +63,39 @@ export class Economy {
          */
         this.shop = new ShopManager(this.options);
     }
+
+    /**
+     * Method that Returns Guild Balance Leaderboard by Balance.
+     * 
+     * @param {string} guildID Guild ID
+     * 
+     * @returns {Promise<boolean|Leaderboard[]>} 
+     */
+    leaderboard(guildID: string): Promise<boolean|Leaderboard[]> {
+        return new Promise(async(res, rej) => {
+            var data = await this.database.get(guildID);
+            
+            if(!data) data = await this.database.createGuild(guildID);
+            if(!data.users.length) return res(false);
+
+            var sortedTop = data.users.sort((a, b) => b.balance - a.balance);
+            var top: Leaderboard[] = [];
+
+            for(var user of sortedTop) {
+                var userRank = (sortedTop.findIndex((x) => x.id === user.id) + 1);
+                
+                top.push({
+                    userID: user.id,
+                    balance: user['balance'],
+                    bank: user['bank'],
+                    rank: userRank,
+                });
+            }
+
+
+            return res(top);
+        });
+    }
 }
 
 /**
@@ -109,7 +142,7 @@ export class Economy {
 /**
  * Economy Guild Shop Item
  * @typedef {Object} EconomyGuildShopItem
- * @prop {number} [name] Item ID
+ * @prop {number} [id] Item ID
  * @prop {string} name Item Name
  * @prop {string} [description] Item Description
  * @prop {number} cost Item Cost
@@ -144,4 +177,13 @@ export class Economy {
  * @typedef {Object} PrettyObject
  * @prop {number} original User Balance Before Formatting
  * @prop {string} pretty User Balance After Formatting
+ */
+
+/**
+ * Guild Leaderboard
+ * @typedef {Object} Leaderboard
+ * @prop {string} userID User ID
+ * @prop {number} balance User Balance
+ * @prop {number} bank User Bank
+ * @prop {number} rank User Rank in Leaderboard
  */
