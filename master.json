@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637874837638
+  "date": 1637945466111
  },
  "custom": {
   "general": {
@@ -11,13 +11,13 @@
     "README": {
      "name": "Welcome",
      "type": "md",
-     "content": "## Welcome!\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n### Warning!\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n<span><code>npm i @badboy-discord/discordjs-economy</code></span>\n\n## This module uses\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>",
-     "path": "pages/general/README.md"
+     "content": "## Welcome!\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n<strong>[Documentation](https://djs-economy.js.org/) | [Support Server](https://discord.gg/9Ps78AGadm)</strong>\n\n### Warning!\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n<span><code>npm i @badboy-discord/discordjs-economy</code></span> <br />\n<span><code>yarn add @badboy-discord/discordjs-economy</code></span>\n\n## This module uses\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>",
+     "path": "README.md"
     },
     "changelog": {
      "name": "ChangeLog",
      "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/bad-boy-discord/discordjs-economy/release) and [Discord Server](https://discord.com/invite/eGZfaWsZgR).</strong>\n<hr>\n› <strong>1.0.0 | First Release</strong> <br />",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Method:</strong> <br />\n- <strong>Fixed some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>",
      "path": "pages/general/changelog.md"
     }
    }
@@ -1265,6 +1265,50 @@
      }
     }
    ],
+   "methods": [
+    {
+     "name": "leaderboard",
+     "description": "Method that Returns Guild Balance Leaderboard by Balance.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "Leaderboard",
+        ">>"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 67,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
    "meta": {
     "line": 18,
     "file": "Economy.ts",
@@ -1601,7 +1645,7 @@
     }
    ],
    "meta": {
-    "line": 68,
+    "line": 101,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1662,7 +1706,7 @@
     }
    ],
    "meta": {
-    "line": 76,
+    "line": 109,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1723,7 +1767,7 @@
     }
    ],
    "meta": {
-    "line": 84,
+    "line": 117,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1785,7 +1829,7 @@
     }
    ],
    "meta": {
-    "line": 92,
+    "line": 125,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1836,7 +1880,7 @@
     }
    ],
    "meta": {
-    "line": 101,
+    "line": 134,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1853,7 +1897,7 @@
    ],
    "props": [
     {
-     "name": "name",
+     "name": "id",
      "description": "Item ID",
      "optional": true,
      "type": [
@@ -1912,7 +1956,7 @@
     }
    ],
    "meta": {
-    "line": 109,
+    "line": 142,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -1963,7 +2007,7 @@
     }
    ],
    "meta": {
-    "line": 119,
+    "line": 152,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2014,7 +2058,7 @@
     }
    ],
    "meta": {
-    "line": 127,
+    "line": 160,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2054,7 +2098,7 @@
     }
    ],
    "meta": {
-    "line": 135,
+    "line": 168,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2094,7 +2138,69 @@
     }
    ],
    "meta": {
-    "line": 142,
+    "line": 175,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "Leaderboard",
+   "description": "Guild Leaderboard",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "userID",
+     "description": "User ID",
+     "type": [
+      [
+       [
+        "string"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "balance",
+     "description": "User Balance",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "bank",
+     "description": "User Bank",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "rank",
+     "description": "User Rank in Leaderboard",
+     "type": [
+      [
+       [
+        "number"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 182,
     "file": "Economy.ts",
     "path": "src/classes"
    }
