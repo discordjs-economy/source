@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637957455284
+  "date": 1637957956191
  },
  "custom": {
   "general": {
@@ -2107,7 +2107,7 @@
     }
    ],
    "meta": {
-    "line": 197,
+    "line": 196,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2168,7 +2168,7 @@
     }
    ],
    "meta": {
-    "line": 206,
+    "line": 205,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2229,7 +2229,7 @@
     }
    ],
    "meta": {
-    "line": 214,
+    "line": 213,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2307,7 +2307,7 @@
     }
    ],
    "meta": {
-    "line": 222,
+    "line": 221,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2358,7 +2358,7 @@
     }
    ],
    "meta": {
-    "line": 232,
+    "line": 231,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2444,7 +2444,7 @@
     }
    ],
    "meta": {
-    "line": 240,
+    "line": 239,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2520,7 +2520,7 @@
     }
    ],
    "meta": {
-    "line": 251,
+    "line": 250,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2571,7 +2571,7 @@
     }
    ],
    "meta": {
-    "line": 261,
+    "line": 260,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2622,7 +2622,7 @@
     }
    ],
    "meta": {
-    "line": 269,
+    "line": 268,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2662,7 +2662,7 @@
     }
    ],
    "meta": {
-    "line": 277,
+    "line": 276,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2702,7 +2702,7 @@
     }
    ],
    "meta": {
-    "line": 284,
+    "line": 283,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2743,7 +2743,7 @@
     }
    ],
    "meta": {
-    "line": 291,
+    "line": 290,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2805,7 +2805,7 @@
     }
    ],
    "meta": {
-    "line": 298,
+    "line": 297,
     "file": "Economy.ts",
     "path": "src/classes"
    }
