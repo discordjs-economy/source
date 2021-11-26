@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637955394428
+  "date": 1637955942532
  },
  "custom": {
   "general": {
@@ -1195,7 +1195,7 @@
       ]
      ],
      "meta": {
-      "line": 38,
+      "line": 37,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1211,7 +1211,7 @@
       ]
      ],
      "meta": {
-      "line": 46,
+      "line": 45,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1227,7 +1227,7 @@
       ]
      ],
      "meta": {
-      "line": 53,
+      "line": 52,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1243,7 +1243,7 @@
       ]
      ],
      "meta": {
-      "line": 60,
+      "line": 59,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1259,7 +1259,7 @@
       ]
      ],
      "meta": {
-      "line": 67,
+      "line": 66,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1275,7 +1275,7 @@
       ]
      ],
      "meta": {
-      "line": 74,
+      "line": 73,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1291,7 +1291,7 @@
       ]
      ],
      "meta": {
-      "line": 81,
+      "line": 80,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1335,7 +1335,7 @@
       ]
      ],
      "meta": {
-      "line": 94,
+      "line": 93,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1357,7 +1357,7 @@
       ]
      ],
      "meta": {
-      "line": 127,
+      "line": 126,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1383,14 +1383,14 @@
       ]
      ],
      "meta": {
-      "line": 162,
+      "line": 161,
       "file": "Economy.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 26,
+    "line": 25,
     "file": "Economy.ts",
     "path": "src/classes"
    }
