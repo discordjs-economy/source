@@ -9,7 +9,7 @@ export declare interface ItemsManager {
     balance: BalanceManager;
 }
 
-export declare class BalanceManager {
+export declare class ItemsManager {
     constructor(options: Options);
 
     buy(
