@@ -41,7 +41,7 @@ export class Economy {
          * @type {Options}
          */
         this.options = options;
-        
+
         if(!this.options.DBName) this.options.DBName = 'economy';
         if(!this.options.checkVersion) this.options.checkVersion = true;
 
@@ -172,9 +172,7 @@ export class Economy {
             var data = await fetch('https://registry.npmjs.com/@badboy-discord/discordjs-economy').then((res) => res.json());
             var moduleVersion = data['dist-tags']['latest'];
 
-            if(
-                (this.version as string) !== (moduleVersion as string)
-            ) {
+            if(this.version !== moduleVersion) {
                 var text = "";
 
                 if(update.major) {
@@ -187,7 +185,8 @@ export class Economy {
                     text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'`;
                 };
 
-                return res(text);
+                console.log(text);
+                return res(true);
             }
             else return res(true);
         });
