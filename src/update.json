@@ -5,6 +5,7 @@
         "- Changed Pages for Website",
         "- Added 'leaderboad()' Method to Economy Class",
         "- Added Privated Methods 'init()' and 'checkVersion()' to Economy Class",
+        "- Added new Option for Version Control",
         "- Created ItemsManager Class for Inventory Handling"
     ],
     "major": true

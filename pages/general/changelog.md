@@ -14,5 +14,6 @@
 - <strong>Fixed and Added some TypeDefs</strong>
 - <strong>Changed Pages for Website</strong>
 - <strong>Added 'leaderboad()' Method to Economy Class</strong>
-- <strong>Added Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>
+- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>
+- <strong>Added new Option for Version Control</strong>
 - <strong>Created ItemsManager Class for Inventory Handling</strong>

@@ -41,7 +41,9 @@ export class Economy {
          * @type {Options}
          */
         this.options = options;
+        
         if(!this.options.DBName) this.options.DBName = 'economy';
+        if(!this.options.checkVersion) this.options.checkVersion = true;
 
         /**
          * Module Database
@@ -55,7 +57,7 @@ export class Economy {
          * 
          * @type {string}
          */
-        this.version = '1.0.0';
+        this.version = '1.0.1';
 
         /**
          * Balance Manager
@@ -170,7 +172,9 @@ export class Economy {
             var data = await fetch('https://registry.npmjs.com/@badboy-discord/discordjs-economy').then((res) => res.json());
             var moduleVersion = data['dist-tags']['latest'];
 
-            if(moduleVersion !== this.version) {
+            if(
+                (this.version as string) !== (moduleVersion as string)
+            ) {
                 var text = "";
 
                 if(update.major) {
@@ -195,6 +199,7 @@ export class Economy {
  * @typedef {Object} Options
  * @prop {string} [DBName] Economy Database Name
  * @prop {string} [DBPath] Economy Database Path
+ * @prop {boolean} [checkVersion] Version Control Status
  * @prop {Rewards} rewards Economy Rewards
  */
 
