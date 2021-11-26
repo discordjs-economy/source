@@ -1,8 +1,11 @@
 import { Leaderboard, Options } from '../Constants';
+
+// Managers
 import { DBManager } from './DBManager';
 import { BalanceManager } from './BalanceManager';
 import { BankManager } from './BankManager';
 import { ShopManager } from './ShopManager';
+import { ItemsManager } from './ItemsManager';
 
 export declare interface Economy {
     options: Options;
@@ -11,6 +14,7 @@ export declare interface Economy {
     balance: BalanceManager;
     bank: BankManager;
     shop: ShopManager;
+    items: ItemsManager;
 }
 
 export declare class Economy {
@@ -19,4 +23,7 @@ export declare class Economy {
     leaderboard(
         guildID: string
     ): Promise<boolean|Leaderboard[]>;
+
+    private init(): Promise<boolean>;
+    private checkVersion(): Promise<boolean>;
 }

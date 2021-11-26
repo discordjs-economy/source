@@ -184,7 +184,8 @@ export class DBManager {
                     daily: false,
                     weekly: false,
                     work: false
-                }
+                },
+                inventory: []
             });
 
             this.set(guildID, data);

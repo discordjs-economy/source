@@ -10,7 +10,9 @@
 - <strong>Created TypeDefs</strong>
 - <strong>Created Module Declarations</strong>
 
-<strong>[1.0.1] Fixes and New Method:</strong> <br />
-- <strong>Fixed some TypeDefs</strong>
+<strong>[1.0.1] Fixes and New Methods:</strong> <br />
+- <strong>Fixed and Added some TypeDefs</strong>
 - <strong>Changed Pages for Website</strong>
 - <strong>Added 'leaderboad()' Method to Economy Class</strong>
+- <strong>Added Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>
+- <strong>Created ItemsManager Class for Inventory Handling</strong>

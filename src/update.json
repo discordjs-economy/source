@@ -1,0 +1,11 @@
+{
+    "version": "1.0.1",
+    "changelog": [
+        "- Fixed and Added some TypeDefs",
+        "- Changed Pages for Website",
+        "- Added 'leaderboad()' Method to Economy Class",
+        "- Added Privated Methods 'init()' and 'checkVersion()' to Economy Class",
+        "- Created ItemsManager Class for Inventory Handling"
+    ],
+    "major": true
+}

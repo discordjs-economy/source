@@ -20,12 +20,22 @@ export interface EconomyUserData {
     balance: number;
     bank: number;
     rewards: EconomyUserRewardsData;
+    inventory: EconomyUserInventory[];
 }
 
 export interface EconomyUserRewardsData {
     daily: boolean;
     weekly: boolean;
     work: boolean;
+}
+
+export interface EconomyUserInventory {
+    itemID: number;
+    name: string;
+    description?: string;
+    cost: number;
+    role?: string;
+    date: number;
 }
 
 export interface EconomyGuildShopItem {
@@ -61,6 +71,11 @@ export interface DepositPrettyObject {
 export interface PrettyObject {
     value: number;
     pretty: string;
+}
+
+export interface ErrorObject {
+    status: boolean;
+    message?: string;
 }
 
 export interface Leaderboard {

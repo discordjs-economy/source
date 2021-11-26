@@ -4,15 +4,23 @@ import { Leaderboard, Options } from "../Constants";
 import { BalanceManager } from "./BalanceManager";
 import { BankManager } from './BankManager';
 import { DBManager } from "./DBManager";
+import { ItemsManager } from "./ItemsManager";
 import { ShopManager } from "./ShopManager";
+
+// Other
+import fetch from 'node-fetch';
+import colors from "colors";
+import update from '../update.json';
 
 export interface Economy {
     options: Options;
     database: DBManager;
+    version: string;
 
     balance: BalanceManager;
     bank: BankManager;
     shop: ShopManager;
+    items: ItemsManager;
 }
 
 /**
@@ -43,6 +51,13 @@ export class Economy {
         this.database = new DBManager(this.options);
 
         /**
+         * Module Version
+         * 
+         * @type {string}
+         */
+        this.version = '1.0.0';
+
+        /**
          * Balance Manager
          *
          * @type {BalanceManager}
@@ -62,6 +77,18 @@ export class Economy {
          * @type {ShopManager}
          */
         this.shop = new ShopManager(this.options);
+
+        /**
+         * Inventory Manager
+         *
+         * @type {ItemsManager}
+         */
+        this.items = new ItemsManager(this.options);
+
+        async () => {
+            await this.init();
+            await this.checkVersion();
+        }
     }
 
     /**
@@ -94,6 +121,71 @@ export class Economy {
 
 
             return res(top);
+        });
+    }
+
+    /**
+     * Method that Initializing Module.
+     * 
+     * @private
+     * @returns {Promise<boolean>} 
+     */
+    private init(): Promise<boolean> {
+        return new Promise(async(res, rej) => {
+            var economyOBJ = this.database.database.keys();
+            var guildIDS: string[] = [];
+
+            for(var name of economyOBJ) {
+                var guildID = name.toString().slice('economy-'.length);
+                guildIDS.push(guildID);
+            };
+
+            for(var guildID of guildIDS) {
+                var data = await this.database.get(guildID);
+                
+                if(!data) continue;
+                if(!data.users) continue;
+
+                for(var user of data.users) {
+                    // Migrating from 1.0.0 to 1.0.1
+                    if(user.inventory === undefined || !Array.isArray(user.inventory)) {
+                        user.inventory = [];
+                        this.database.set(guildID, data);
+                    }
+                }
+            };
+
+            return res(true);
+        });
+    }
+
+    /**
+     * Method that Check Module for Update.
+     * 
+     * @private
+     * @returns {Promise<boolean|string>} 
+     */
+    private checkVersion(): Promise<boolean|string> {
+        return new Promise(async(res, rej) => {
+            var data = await fetch('https://registry.npmjs.com/@badboy-discord/discordjs-economy').then((res) => res.json());
+            var moduleVersion = data['dist-tags']['latest'];
+
+            if(moduleVersion !== this.version) {
+                var text = "";
+
+                if(update.major) {
+                    text += `New ${colors.red('major')} Version avaliable on NPMjs (v${update.version})!\n`;
+                    text += `It is recommended to install it!\n`;
+                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'`;
+                }
+                else {
+                    text += `New Version avaliable on NPMjs (v${update.version})!\n`;
+                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'`;
+                };
+
+                return res(text);
+            }
+            else return res(true);
         });
     }
 }
@@ -129,6 +221,7 @@ export class Economy {
  * @prop {number} balance User Balance
  * @prop {number} bank User Bank
  * @prop {EconomyUserRewardsData} rewards User Rewards
+ * @prop {EconomyUserInventory[]} inventory User Inventory
  */
 
 /**
@@ -137,6 +230,17 @@ export class Economy {
  * @prop {boolean} daily Daily Reward Collected
  * @prop {boolean} weekly Weekly Reward Collected
  * @prop {boolean} work Work Reward Collected
+ */
+
+/**
+ * Economy User Rewards Data
+ * @typedef {Object} EconomyUserInventory
+ * @prop {number} itemID Item ID
+ * @prop {string} name Item Name
+ * @prop {string} [description] Item Description
+ * @prop {number} cost Item Cost
+ * @prop {string} [role] Item Role
+ * @prop {number} date Date of Purchase
  */
 
 /**
@@ -177,6 +281,13 @@ export class Economy {
  * @typedef {Object} PrettyObject
  * @prop {number} original User Balance Before Formatting
  * @prop {string} pretty User Balance After Formatting
+ */
+
+/**
+ * Error Object
+ * @typedef {Object} ErrorObject
+ * @prop {boolean} status true or false
+ * @prop {string} [message] Error Message
  */
 
 /**
