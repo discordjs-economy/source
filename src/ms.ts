@@ -18,7 +18,7 @@ var y = d * 365.25
   * @return {String|Number}
   * @api public
   */
-export = function (val, options?: any) {
+export function ms (val, options?: any) {
     options = options || {};
     var type = typeof val;
 

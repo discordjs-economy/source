@@ -1,6 +1,6 @@
-import { BalanceObject, CooldownType, EconomyUserRewardObject, Options } from "../Constants";
+import { CooldownType, EconomyUserRewardObject, Options } from "../Constants";
 import { DBManager } from "./DBManager";
-import ms from '../ms';
+import { ms } from '../ms';
 
 export interface CooldownManager {
     options: Options;
