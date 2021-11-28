@@ -1,6 +1,6 @@
 {
   "name": "@badboy-discord/discordjs-economy",
-  "version": "1.0.2",
+  "version": "1.0.2-dev",
   "description": "A module that will simplify creating Economy System for Your Discord Bot.",
   "main": "dist/index.js",
   "types": "src/typings/Economy.d.ts",
