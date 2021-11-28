@@ -57,7 +57,7 @@ export class Economy {
          * 
          * @type {string}
          */
-        this.version = '1.0.1';
+        this.version = '1.0.2';
 
         /**
          * Balance Manager
@@ -130,7 +130,7 @@ export class Economy {
      * @returns {Promise<boolean>} 
      */
     private async init(): Promise<boolean> {
-        await this.checkVersion();
+        if(this.options.checkVersion === true) await this.checkVersion();
         
         return new Promise(async(res, rej) => {
             var economyOBJ = this.database.database.keys();
@@ -177,11 +177,15 @@ export class Economy {
                 if(update.major) {
                     text += `New ${colors.red('major')} Version avaliable on NPMjs (v${update.version})!\n`;
                     text += `It is recommended to install it!\n`;
-                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'`;
+                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'\n`;
+                    text += `Changes:\n`;
+                    text += `${update.changelog.join('\n')}\n\n`;
                 }
                 else {
                     text += `New Version avaliable on NPMjs (v${update.version})!\n`;
-                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'`;
+                    text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!\n`;
+                    text += `Changes:\n`;
+                    text += `${update.changelog.join('\n')}\n\n`;
                 };
 
                 console.log(text);
@@ -230,9 +234,18 @@ export class Economy {
 /**
  * Economy User Rewards Data
  * @typedef {Object} EconomyUserRewardsData
- * @prop {boolean} daily Daily Reward Collected
- * @prop {boolean} weekly Weekly Reward Collected
- * @prop {boolean} work Work Reward Collected
+ * @prop {EconomyUserRewardObject} daily Daily Reward
+ * @prop {EconomyUserRewardObject} weekly Weekly Reward
+ * @prop {EconomyUserRewardObject} work Work Reward
+ */
+
+/**
+ * Economy User Reward Object
+ * @typedef {Object} EconomyUserRewardObject
+ * @prop {boolean} status Collected or not
+ * @prop {number} [collectedAt] Collected At
+ * @prop {PrettyObject} [collectAt] Collect At
+ * @prop {NodeJS.Timeout} [timeout] Cooldown Timeout
  */
 
 /**
@@ -282,8 +295,8 @@ export class Economy {
 /**
  * Pretty Object for BalanceObject
  * @typedef {Object} PrettyObject
- * @prop {number} original User Balance Before Formatting
- * @prop {string} pretty User Balance After Formatting
+ * @prop {number} original Before Formatting
+ * @prop {string} [pretty] After Formatting
  */
 
 /**
@@ -291,6 +304,7 @@ export class Economy {
  * @typedef {Object} ErrorObject
  * @prop {boolean} status true or false
  * @prop {string} [message] Error Message
+ * @prop {any} [data] Object with Data
  */
 
 /**
@@ -300,4 +314,11 @@ export class Economy {
  * @prop {number} balance User Balance
  * @prop {number} bank User Bank
  * @prop {number} rank User Rank in Leaderboard
+ */
+
+/**
+ * * daily
+ * * weekly
+ * * work
+ * @typedef {string} CooldownType
  */

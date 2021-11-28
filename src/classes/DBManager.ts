@@ -181,9 +181,26 @@ export class DBManager {
                 balance: 0,
                 bank: 0,
                 rewards: {
-                    daily: false,
-                    weekly: false,
-                    work: false
+                    daily: {
+                        status: false,
+                        collectedAt: null,
+                        collectAt: null,
+                        timeout: null
+                    },
+                    
+                    weekly: {
+                        status: false,
+                        collectedAt: null,
+                        collectAt: null,
+                        timeout: null
+                    },
+                    
+                    work: {
+                        status: false,
+                        collectedAt: null,
+                        collectAt: null,
+                        timeout: null
+                    }
                 },
                 inventory: []
             });

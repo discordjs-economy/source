@@ -25,9 +25,16 @@ export interface EconomyUserData {
 }
 
 export interface EconomyUserRewardsData {
-    daily: boolean;
-    weekly: boolean;
-    work: boolean;
+    daily: EconomyUserRewardObject;
+    weekly: EconomyUserRewardObject;
+    work: EconomyUserRewardObject;
+}
+
+export interface EconomyUserRewardObject {
+    status: boolean;
+    collectedAt?: number;
+    collectAt?: PrettyObject;
+    timeout?: NodeJS.Timeout;
 }
 
 export interface EconomyUserInventory {
@@ -71,12 +78,13 @@ export interface DepositPrettyObject {
 
 export interface PrettyObject {
     value: number;
-    pretty: string;
+    pretty?: string;
 }
 
 export interface ErrorObject {
     status: boolean;
     message?: string;
+    data?: any;
 }
 
 export interface Leaderboard {
@@ -85,3 +93,5 @@ export interface Leaderboard {
     bank: number;
     rank: number;
 }
+
+export type CooldownType = ('daily' | 'weekly' | 'work');

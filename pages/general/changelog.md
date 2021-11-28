@@ -17,3 +17,9 @@
 - <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>
 - <strong>Added new Option for Version Control</strong>
 - <strong>Created ItemsManager Class for Inventory Handling</strong>
+
+<strong>[1.0.2] New Classes:</strong> <br />
+- <strong>Edited and Added some TypeDefs</strong>
+- <strong>Created Cooldown and Rewards Managers</strong>
+- <strong>Created Objects for Rewards</strong>
+- <strong>Edited some methods from Economy Class</strong>
