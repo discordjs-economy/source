@@ -1,13 +1,14 @@
 {
   "name": "@badboy-discord/discordjs-economy",
-  "version": "1.0.2-dev",
+  "version": "1.0.3-dev",
   "description": "A module that will simplify creating Economy System for Your Discord Bot.",
   "main": "dist/index.js",
   "types": "src/typings/Economy.d.ts",
   "scripts": {
     "build": "tsc",
     "postinstall": "npm run build",
-    "docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json"
+    "docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json",
+    "publish:dev": "npm publish --tag dev"
   },
   "repository": {
     "type": "git",
