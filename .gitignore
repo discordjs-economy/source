@@ -2,5 +2,4 @@ node_modules/
 tests/
 dist/
 coverage/
-package-lock.json
 jest.config.js
