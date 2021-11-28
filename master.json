@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1637958279586
+  "date": 1638130446826
  },
  "custom": {
   "general": {
@@ -17,7 +17,7 @@
     "changelog": {
      "name": "ChangeLog",
      "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>\n\n<strong>[1.0.2] New Classes:</strong> <br />\n- <strong>Edited and Added some TypeDefs</strong>\n- <strong>Created Cooldown and Rewards Managers</strong>\n- <strong>Created Objects for Rewards</strong>\n- <strong>Edited some methods from Economy Class</strong>",
      "path": "pages/general/changelog.md"
     }
    }
@@ -685,6 +685,235 @@
    }
   },
   {
+   "name": "CooldownManager",
+   "description": "Cooldown Class",
+   "construct": {
+    "name": "CooldownManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 23,
+      "file": "CooldownManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 31,
+      "file": "CooldownManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "create",
+     "description": "Method that Creates Cooldown.",
+     "params": [
+      {
+       "name": "type",
+       "description": "Cooldown Type",
+       "type": [
+        [
+         [
+          "CooldownType"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 39,
+      "file": "CooldownManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "delete",
+     "description": "Method that Removes Cooldown.",
+     "params": [
+      {
+       "name": "type",
+       "description": "Cooldown Type",
+       "type": [
+        [
+         [
+          "CooldownType"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 84,
+      "file": "CooldownManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "get",
+     "description": "Method that Removes Cooldown.",
+     "params": [
+      {
+       "name": "type",
+       "description": "Cooldown Type",
+       "type": [
+        [
+         [
+          "CooldownType"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyUserRewardObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 114,
+      "file": "CooldownManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 10,
+    "file": "CooldownManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
    "name": "DBManager",
    "description": "Database Manager",
    "construct": {
@@ -1152,7 +1381,7 @@
       ]
      ],
      "meta": {
-      "line": 200,
+      "line": 217,
       "file": "DBManager.ts",
       "path": "src/classes"
      }
@@ -1767,6 +1996,234 @@
    }
   },
   {
+   "name": "RewardsManager",
+   "description": "Rewards Class",
+   "construct": {
+    "name": "RewardsManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 26,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 34,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "balance",
+     "description": "Balance Manager",
+     "type": [
+      [
+       [
+        "BalanceManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 41,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "cooldowns",
+     "description": "Cooldown Manager",
+     "type": [
+      [
+       [
+        "CooldownManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 48,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "daily",
+     "description": "Method that Adds Daily Reward to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 56,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "weekly",
+     "description": "Method that Adds Weekly Reward to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 84,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "work",
+     "description": "Method that Adds Work Reward to User.",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "string"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "BalanceObject",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 112,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 13,
+    "file": "RewardsManager.ts",
+    "path": "src/classes"
+   }
+  },
+  {
    "name": "ShopManager",
    "description": "Balance Class",
    "construct": {
@@ -2108,7 +2565,7 @@
     }
    ],
    "meta": {
-    "line": 195,
+    "line": 199,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2169,7 +2626,7 @@
     }
    ],
    "meta": {
-    "line": 204,
+    "line": 208,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2230,7 +2687,7 @@
     }
    ],
    "meta": {
-    "line": 212,
+    "line": 216,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2308,7 +2765,7 @@
     }
    ],
    "meta": {
-    "line": 220,
+    "line": 224,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2326,18 +2783,58 @@
    "props": [
     {
      "name": "daily",
-     "description": "Daily Reward Collected",
+     "description": "Daily Reward",
      "type": [
       [
        [
-        "boolean"
+        "EconomyUserRewardObject"
        ]
       ]
      ]
     },
     {
      "name": "weekly",
-     "description": "Weekly Reward Collected",
+     "description": "Weekly Reward",
+     "type": [
+      [
+       [
+        "EconomyUserRewardObject"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "work",
+     "description": "Work Reward",
+     "type": [
+      [
+       [
+        "EconomyUserRewardObject"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 234,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserRewardObject",
+   "description": "Economy User Reward Object",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "status",
+     "description": "Collected or not",
      "type": [
       [
        [
@@ -2347,19 +2844,48 @@
      ]
     },
     {
-     "name": "work",
-     "description": "Work Reward Collected",
+     "name": "collectedAt",
+     "description": "Collected At",
+     "optional": true,
      "type": [
       [
        [
-        "boolean"
+        "number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "collectAt",
+     "description": "Collect At",
+     "optional": true,
+     "type": [
+      [
+       [
+        "PrettyObject"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "timeout",
+     "description": "Cooldown Timeout",
+     "optional": true,
+     "type": [
+      [
+       [
+        "NodeJS",
+        "."
+       ],
+       [
+        "Timeout"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 230,
+    "line": 242,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2445,7 +2971,7 @@
     }
    ],
    "meta": {
-    "line": 238,
+    "line": 251,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2521,7 +3047,7 @@
     }
    ],
    "meta": {
-    "line": 249,
+    "line": 262,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2572,7 +3098,7 @@
     }
    ],
    "meta": {
-    "line": 259,
+    "line": 272,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2623,7 +3149,7 @@
     }
    ],
    "meta": {
-    "line": 267,
+    "line": 280,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2663,7 +3189,7 @@
     }
    ],
    "meta": {
-    "line": 275,
+    "line": 288,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2681,7 +3207,7 @@
    "props": [
     {
      "name": "original",
-     "description": "User Balance Before Formatting",
+     "description": "Before Formatting",
      "type": [
       [
        [
@@ -2692,7 +3218,8 @@
     },
     {
      "name": "pretty",
-     "description": "User Balance After Formatting",
+     "description": "After Formatting",
+     "optional": true,
      "type": [
       [
        [
@@ -2703,7 +3230,7 @@
     }
    ],
    "meta": {
-    "line": 282,
+    "line": 295,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2741,10 +3268,22 @@
        ]
       ]
      ]
+    },
+    {
+     "name": "data",
+     "description": "Object with Data",
+     "optional": true,
+     "type": [
+      [
+       [
+        "any"
+       ]
+      ]
+     ]
     }
    ],
    "meta": {
-    "line": 289,
+    "line": 302,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2806,7 +3345,23 @@
     }
    ],
    "meta": {
-    "line": 296,
+    "line": 310,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "CooldownType",
+   "description": "* daily\n* weekly\n* work",
+   "type": [
+    [
+     [
+      "string"
+     ]
+    ]
+   ],
+   "meta": {
+    "line": 319,
     "file": "Economy.ts",
     "path": "src/classes"
    }
