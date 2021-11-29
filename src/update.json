@@ -4,7 +4,9 @@
         "- Edited and Added some TypeDefs",
         "- Created Cooldown and Rewards Managers",
         "- Created Objects for Rewards",
-        "- Edited some methods from Economy Class"
+        "- Edited some methods from Economy Class",
+        "- Created Typings for new Managers",
+        "- Created Basic Example for module"
     ],
     "major": true
 }

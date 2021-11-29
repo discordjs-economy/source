@@ -1,6 +1,6 @@
 {
   "name": "@badboy-discord/discordjs-economy",
-  "version": "1.0.2-dev",
+  "version": "1.0.2",
   "description": "A module that will simplify creating Economy System for Your Discord Bot.",
   "main": "dist/index.js",
   "types": "src/typings/Economy.d.ts",
@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/discordjs-economy/source#readme",
   "dependencies": {
-    "@types/node-fetch": "^2.5.12",
     "colors": "^1.4.0",
     "enmap": "^5.8.7",
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.5.12",
     "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.16.0",

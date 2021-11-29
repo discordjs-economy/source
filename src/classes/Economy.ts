@@ -95,14 +95,14 @@ export class Economy {
      * 
      * @param {string} guildID Guild ID
      * 
-     * @returns {Promise<boolean|Leaderboard[]>} 
+     * @returns {Promise<null|Leaderboard[]>} 
      */
-    leaderboard(guildID: string): Promise<boolean|Leaderboard[]> {
+    leaderboard(guildID: string): Promise<null|Leaderboard[]> {
         return new Promise(async(res, rej) => {
             var data = await this.database.get(guildID);
             
             if(!data) data = await this.database.createGuild(guildID);
-            if(!data.users.length) return res(false);
+            if(!data.users.length) return res(null);
 
             var sortedTop = data.users.sort((a, b) => b.balance - a.balance);
             var top: Leaderboard[] = [];

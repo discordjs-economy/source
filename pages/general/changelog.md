@@ -23,3 +23,5 @@
 - <strong>Created Cooldown and Rewards Managers</strong>
 - <strong>Created Objects for Rewards</strong>
 - <strong>Edited some methods from Economy Class</strong>
+- <strong>Created Typings for new Managers</strong>
+- <strong>Created Basic Example for module</strong>
