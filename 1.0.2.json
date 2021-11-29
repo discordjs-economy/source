@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1638133348718
+  "date": 1638194347850
  },
  "custom": {
   "general": {
@@ -17,7 +17,7 @@
     "changelog": {
      "name": "ChangeLog",
      "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>\n\n<strong>[1.0.2] New Classes:</strong> <br />\n- <strong>Edited and Added some TypeDefs</strong>\n- <strong>Created Cooldown and Rewards Managers</strong>\n- <strong>Created Objects for Rewards</strong>\n- <strong>Edited some methods from Economy Class</strong>",
+     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>\n\n<strong>[1.0.2] New Classes:</strong> <br />\n- <strong>Edited and Added some TypeDefs</strong>\n- <strong>Created Cooldown and Rewards Managers</strong>\n- <strong>Created Objects for Rewards</strong>\n- <strong>Edited some methods from Economy Class</strong>\n- <strong>Created Typings for new Managers</strong>\n- <strong>Created Basic Example for module</strong>",
      "path": "pages/general/changelog.md"
     }
    }
@@ -1550,7 +1550,7 @@
         "<"
        ],
        [
-        "boolean",
+        "null",
         "|"
        ],
        [
