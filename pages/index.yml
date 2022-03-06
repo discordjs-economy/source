@@ -1,6 +1,6 @@
 - name: General
-  files: 
+  files:
     - name: Welcome
-      path: ../../README.md
+      path: welcome.md
     - name: ChangeLog
       path: changelog.md
