@@ -1,38 +1,25 @@
 import { EconomyGuildShopItem, ErrorObject, Options } from "../Constants";
 import { BalanceManager } from "./BalanceManager";
+import { CooldownManager } from "./CooldownManager";
 import { DBManager } from "./DBManager";
 
-export interface ItemsManager {
-    options: Options;
-    database: DBManager;
+export interface RewardsManager {
+  options: Options;
+  database: DBManager;
 
-    balance: BalanceManager;
+  balance: BalanceManager;
+  cooldowns: CooldownManager;
 }
 
-export declare class ItemsManager {
-    constructor(options: Options);
+export declare class RewardsManager {
+  constructor(options: Options);
 
-    buy(
-        guildID: string,
-        userID: string, 
-        itemID: number
-    ): Promise<boolean|ErrorObject>;
+  daily(guildID: string, userID: string): Promise<BalanceManager | ErrorObject>;
 
-    sell(
-        guildID: string,
-        userID: string, 
-        itemID: number
-    ): Promise<boolean|ErrorObject>;
-    
-    use(
-        guildID: string,
-        userID: string, 
-        itemID: number
-    ): Promise<EconomyGuildShopItem|ErrorObject>;
+  weekly(
+    guildID: string,
+    userID: string
+  ): Promise<BalanceManager | ErrorObject>;
 
-    get(
-        guildID: string,
-        userID: string, 
-        itemID: number
-    ): Promise<EconomyGuildShopItem|ErrorObject>;
+  work(guildID: string, userID: string): Promise<BalanceManager | ErrorObject>;
 }

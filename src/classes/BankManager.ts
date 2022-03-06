@@ -1,9 +1,9 @@
-import { BalanceObject, DepositObject, Options, PrettyObject } from "../Constants";
+import { BalanceObject, DepositObject, Options } from "../Constants";
 import { DBManager } from "./DBManager";
 
 export interface BankManager {
-    options: Options;
-    database: DBManager;
+  options: Options;
+  database: DBManager;
 }
 
 /**
@@ -13,270 +13,234 @@ export interface BankManager {
  * @classdesc Bank Class
  */
 export class BankManager {
+  /**
+   * @constructor
+   *
+   * @param {Options} options Module Options
+   */
+  constructor(options: Options) {
     /**
-     * @constructor
-     * 
-     * @param {Options} options Module Options
+     * Module Options
+     *
+     * @type {Options}
      */
-    constructor(options: Options) {
-        /**
-         * Module Options
-         * 
-         * @type {Options}
-         */
-        this.options = options;
-        if(!this.options.DBName) this.options.DBName = 'economy';
- 
-        /**
-          * Module Database
-          * 
-          * @type {DBManager}
-          */
-        this.database = new DBManager(this.options);
-    }
+    this.options = options;
+    if (!this.options.DBName) this.options.DBName = "economy";
 
     /**
-     * Method that Adds Bank Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Add
-     * 
-     * @returns {Promise<BalanceObject>} 
+     * Module Database
+     *
+     * @type {DBManager}
      */
-    add(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
-        return new Promise(async (res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+    this.database = new DBManager(this.options);
+  }
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+  /**
+   * Method that Adds Bank Balance to User.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   * @param {Number} amount Amount to Add
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  add(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-            this.database.add(guildID, userID, 'bank', amount);
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+      this.database.add(guildID, userID, "bank", amount);
 
-            return res({
-                amount: amount,
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-                before: {
-                    value: user['bank'],
-                    pretty: user['bank'].toLocaleString('be')
-                },
+      return res({
+        amount: amount,
 
-                after: {
-                    value: newUser['bank'],
-                    pretty: newUser['bank'].toLocaleString('be')
-                }
-            });
-        });
-    }
+        balance: {
+          before: user.bank,
+          after: newUser.bank,
+        },
+      });
+    });
+  }
 
-    /**
-     * Method that Subtracts Bank Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Subtract
-     * 
-     * @returns {Promise<BalanceObject>} 
-     */
-    subtract(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+  /**
+   * Method that Subtracts Bank Balance to User.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   * @param {Number} amount Amount to Subtract
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  subtract(
+    guildID: string,
+    userID: string,
+    amount: number
+  ): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            this.database.subtract(guildID, userID, 'bank', amount);
+      this.database.subtract(guildID, userID, "bank", amount);
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-            return res({
-                amount: amount,
+      return res({
+        amount: amount,
 
-                before: {
-                    value: user['bank'],
-                    pretty: user['bank'].toLocaleString('be')
-                },
+        balance: {
+          before: user.bank,
+          after: newUser.bank,
+        },
+      });
+    });
+  }
 
-                after: {
-                    value: newUser['bank'],
-                    pretty: newUser['bank'].toLocaleString('be')
-                }
-            });
-        });
-    }
+  /**
+   * Method that Sets Bank Balance to User.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   * @param {Number} value Value to Set
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  set(guildID: string, userID: string, value: number): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-    /**
-     * Method that Sets Bank Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} value Value to Set
-     * 
-     * @returns {Promise<BalanceObject>} 
-     */
-    set(guildID: string, userID: string, value: number): Promise<BalanceObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+      this.database.setProp(guildID, userID, "bank", value);
 
-            this.database.setProp(guildID, userID, 'bank', value);
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+      return res({
+        amount: value,
 
-            return res({
-                amount: value,
+        balance: {
+          before: user.bank,
+          after: newUser.bank,
+        },
+      });
+    });
+  }
 
-                before: {
-                    value: user['bank'],
-                    pretty: user['bank'].toLocaleString('be')
-                },
+  /**
+   * Method that Returns User Bank.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   *
+   * @returns {Promise<Number>}
+   */
+  get(guildID: string, userID: string): Promise<number> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-                after: {
-                    value: newUser['bank'],
-                    pretty: newUser['bank'].toLocaleString('be')
-                }
-            });
-        });
-    }
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-    
+      return res(user.bank);
+    });
+  }
 
-    /**
-     * Method that Returns User Bank.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * 
-     * @returns {Promise<PrettyObject>} 
-     */
-    get(guildID: string, userID: string): Promise<PrettyObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+  /**
+   * Method that Deposits to Bank.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   * @param {Number} amount Amount to Deposit
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  deposit(
+    guildID: string,
+    userID: string,
+    amount: number
+  ): Promise<DepositObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            return res({
-                value: user['bank'],
-                pretty: user['bank'].toLocaleString('be')
-            });
-        });
-    }
+      this.database.subtract(guildID, userID, "balance", amount);
+      this.database.add(guildID, userID, "bank", amount);
 
-    /**
-     * Method that Deposits to Bank.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Deposit
-     * 
-     * @returns {Promise<BalanceObject>} 
-     */
-    deposit(guildID: string, userID: string, amount: number): Promise<DepositObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+      return res({
+        amount: amount,
 
-            this.database.subtract(guildID, userID, 'balance', amount);
-            this.database.add(guildID, userID, 'bank', amount);
+        balance: {
+          before: user.balance,
+          after: newUser.balance,
+        },
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+        bank: {
+          before: user.bank,
+          after: newUser.bank,
+        },
+      });
+    });
+  }
 
-            return res({
-                amount: amount,
+  /**
+   * Method that Withdraws from Bank.
+   *
+   * @param {String} guildID Guild ID
+   * @param {String} userID User ID
+   * @param {Number} amount Amount to Withdraw
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  withdraw(
+    guildID: string,
+    userID: string,
+    amount: number
+  ): Promise<DepositObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-                balance: {
-                    before: {
-                        value: user['balance'],
-                        pretty: user['balance'].toLocaleString('be')
-                    },
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-                    after: {
-                        value: newUser['balance'],
-                        pretty: newUser['balance'].toLocaleString('be')
-                    }
-                },
+      this.database.subtract(guildID, userID, "bank", amount);
+      this.database.add(guildID, userID, "balance", amount);
 
-                bank: {
-                    before: {
-                        value: user['bank'],
-                        pretty: user['bank'].toLocaleString('be')
-                    },
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-                    after: {
-                        value: newUser['bank'],
-                        pretty: newUser['bank'].toLocaleString('be')
-                    }
-                },
-            });
-        });
-    }
+      return res({
+        amount: amount,
 
-    /**
-     * Method that Withdraws from Bank.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Withdraw
-     * 
-     * @returns {Promise<BalanceObject>} 
-     */
-    withdraw(guildID: string, userID: string, amount: number): Promise<DepositObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+        balance: {
+          before: user.balance,
+          after: newUser.balance,
+        },
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
-
-            this.database.subtract(guildID, userID, 'bank', amount);
-            this.database.add(guildID, userID, 'balance', amount);
-
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
-
-            return res({
-                amount: amount,
-
-                balance: {
-                    before: {
-                        value: user['balance'],
-                        pretty: user['balance'].toLocaleString('be')
-                    },
-
-                    after: {
-                        value: newUser['balance'],
-                        pretty: newUser['balance'].toLocaleString('be')
-                    }
-                },
-
-                bank: {
-                    before: {
-                        value: user['bank'],
-                        pretty: user['bank'].toLocaleString('be')
-                    },
-
-                    after: {
-                        value: newUser['bank'],
-                        pretty: newUser['bank'].toLocaleString('be')
-                    }
-                },
-            });
-        });
-    }
+        bank: {
+          before: user.bank,
+          after: newUser.bank,
+        },
+      });
+    });
+  }
 }

@@ -1,4 +1,4 @@
-import { BalanceObject, Options, PrettyObject } from "../Constants";
+import { BalanceObject, Options } from "../Constants";
 import { DBManager } from "./DBManager";
 
 export interface BalanceManager {
@@ -60,14 +60,9 @@ export class BalanceManager {
             return res({
                 amount: amount,
 
-                before: {
-                    value: user['balance'],
-                    pretty: user['balance'].toLocaleString('be')
-                },
-
-                after: {
-                    value: newUser['balance'],
-                    pretty: newUser['balance'].toLocaleString('be')
+                balance: {
+                    before: user.balance,
+                    after: newUser.balance
                 }
             });
         });
@@ -98,14 +93,9 @@ export class BalanceManager {
             return res({
                 amount: amount,
 
-                before: {
-                    value: user['balance'],
-                    pretty: user['balance'].toLocaleString('be')
-                },
-
-                after: {
-                    value: newUser['balance'],
-                    pretty: newUser['balance'].toLocaleString('be')
+                balance: {
+                    before: user.balance,
+                    after: newUser.balance
                 }
             });
         });
@@ -136,14 +126,9 @@ export class BalanceManager {
             return res({
                 amount: value,
 
-                before: {
-                    value: user['balance'],
-                    pretty: user['balance'].toLocaleString('be')
-                },
-
-                after: {
-                    value: newUser['balance'],
-                    pretty: newUser['balance'].toLocaleString('be')
+                balance: {
+                    before: user.balance,
+                    after: newUser.balance
                 }
             });
         });
@@ -155,9 +140,9 @@ export class BalanceManager {
      * @param {string} guildID Guild ID 
      * @param {string} userID User ID
      * 
-     * @returns {Promise<PrettyObject>} 
+     * @returns {Promise<Number>} 
      */
-    get(guildID: string, userID: string): Promise<PrettyObject> {
+    get(guildID: string, userID: string): Promise<number> {
         return new Promise(async(res, rej) => {
             var data = await this.database.get(guildID);
             if(!data) data = await this.database.createGuild(guildID);
@@ -165,10 +150,7 @@ export class BalanceManager {
             var user = data.users.find((x) => x.id === userID);
             if(!user) user = await this.database.createUser(guildID, userID);
 
-            return res({
-                value: user['balance'],
-                pretty: user['balance'].toLocaleString('be')
-            });
+            return res(user.balance);
         });
     }
 }
