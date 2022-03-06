@@ -2,23 +2,17 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1646595234131
+  "date": 1646596431602
  },
  "custom": {
   "general": {
    "name": "General",
    "files": {
-    "README": {
+    "welcome": {
      "name": "Welcome",
      "type": "md",
      "content": "## Welcome!\n\n<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />\n<strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>\n\n<strong>[Documentation](https://djs-economy.js.org/) | [Support Server](https://discord.gg/zsTgXs24k2)</strong>\n\n### Warning!\n\n<strong>To use this module You need to have [NodeJS v14 or Above](https://nodejs.org/) installed!</strong>\n\n## Features\n\n<span><strong>[🔑] Built in TypeScript</strong></span> <br />\n<span><strong>[⚙] 100% Promise-based</strong></span> <br />\n<span><strong>[🙂] TypeScript Support</strong></span> <br />\n\n## Installing\n\n<span><code>npm i @badboy-discord/discordjs-economy</code></span> <br />\n<span><code>yarn add @badboy-discord/discordjs-economy</code></span>\n\n## This module uses\n\n<span><strong>[1] [enmap (Database)](https://npmjs.com/package/enmap/)</strong></span> <br />\n<span><strong>[2] [TypeScript (Compiller)](https://npmjs.com/package/typescript/)</strong></span>\n",
-     "path": "README.md"
-    },
-    "changelog": {
-     "name": "ChangeLog",
-     "type": "md",
-     "content": "<strong>Information taked from [GitHub Releases](https://github.com/discordjs-economy/source/release) and [Discord Server](https://discord.gg/9Ps78AGadm).</strong>\n\n<hr>\n\n<strong>[1.0.0] First Release:</strong>\n- <strong>Added 5 Classes - BalanceManager, BankManager, DBManager, Economy, ShopManager (Economy as default)</strong>\n- <strong>Added functionality for Database Manager</strong>\n- <strong>Added functionality for Balance and Bank Managers</strong>\n- <strong>Added functionality for Shop Manager</strong>\n- <strong>Created TypeDefs</strong>\n- <strong>Created Module Declarations</strong>\n\n<strong>[1.0.1] Fixes and New Methods:</strong> <br />\n- <strong>Fixed and Added some TypeDefs</strong>\n- <strong>Changed Pages for Website</strong>\n- <strong>Added 'leaderboad()' Method to Economy Class</strong>\n- <strong>Added Privated Methods 'init()' and 'checkVersion()' to Economy Class</strong>\n- <strong>Added new Option for Version Control</strong>\n- <strong>Created ItemsManager Class for Inventory Handling</strong>\n\n<strong>[1.0.2] New Classes:</strong> <br />\n- <strong>Edited and Added some TypeDefs</strong>\n- <strong>Created Cooldown and Rewards Managers</strong>\n- <strong>Created Objects for Rewards</strong>\n- <strong>Edited some methods from Economy Class</strong>\n- <strong>Created Typings for new Managers</strong>\n- <strong>Created Basic Example for module</strong>",
-     "path": "pages/general/changelog.md"
+     "path": "pages/general/welcome.md"
     }
    }
   }
