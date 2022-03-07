@@ -59,7 +59,7 @@ export class RewardsManager {
    * @param {String} guildID Guild ID
    * @param {String} userID User ID
    *
-   * @returns {Promise<BalanceObject>}
+   * @returns {Promise<BalanceObject|ErrorObject>}
    */
   daily(guildID: string, userID: string): Promise<BalanceObject | ErrorObject> {
     return new Promise(async (res, rej) => {
@@ -78,7 +78,7 @@ export class RewardsManager {
         });
       }
 
-      var balanceData = this.balance.add(
+      var balanceData = await this.balance.add(
         guildID,
         userID,
         this.options.rewards.daily
@@ -101,7 +101,7 @@ export class RewardsManager {
    * @param {String} guildID Guild ID
    * @param {String} userID User ID
    *
-   * @returns {Promise<BalanceObject>}
+   * @returns {Promise<BalanceObject|ErrorObject>}
    */
   weekly(
     guildID: string,
@@ -123,7 +123,7 @@ export class RewardsManager {
         });
       }
 
-      var balanceData = this.balance.add(
+      var balanceData = await this.balance.add(
         guildID,
         userID,
         this.options.rewards.weekly
@@ -146,7 +146,7 @@ export class RewardsManager {
    * @param {String} guildID Guild ID
    * @param {String} userID User ID
    *
-   * @returns {Promise<BalanceObject>}
+   * @returns {Promise<BalanceObject|ErrorObject>}
    */
   work(guildID: string, userID: string): Promise<BalanceObject | ErrorObject> {
     return new Promise(async (res, rej) => {
@@ -176,7 +176,7 @@ export class RewardsManager {
         else toAdd = Math.floor(Math.random() * (min - max)) + max;
       } else toAdd = workReward;
 
-      var balanceData = this.balance.add(guildID, userID, toAdd);
+      var balanceData = await this.balance.add(guildID, userID, toAdd);
       this.cooldowns.create("work", toAdd, guildID, userID);
 
       return res(balanceData);
