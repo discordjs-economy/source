@@ -183,16 +183,13 @@ export class Economy {
 
       var moduleVersion = data["dist-tags"]["latest"];
       if (this.version !== moduleVersion) {
-        var github_data = await (
+        var { major, changelog, version } = await (
           await request(
             "https://raw.githubusercontent.com/bad-boy-discord/storage/master/discordjs-economy/update.json"
           )
-        ).body.text();
+        ).body.json();
 
-        var obj = JSON.stringify(github_data);
-        var { major, changelog, version } = JSON.parse(obj);
         var text = "";
-
         if (major) {
           var major_text = colors.red("major");
           text += `New ${major_text} Version avaliable on NPMjs (v${version})!\n`;
