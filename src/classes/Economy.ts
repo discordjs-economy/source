@@ -196,12 +196,12 @@ export class Economy {
           text += `It is recommended to install it!\n`;
           text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'\n`;
           text += `Changes:\n`;
-          text += `${changelog.join("\n")}\n\n`;
+          text += `${changelog}\n`;
         } else {
           text += `New Version avaliable on NPMjs (v${version})!\n`;
           text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!\n`;
           text += `Changes:\n`;
-          text += `${changelog.join("\n")}\n\n`;
+          text += `${changelog}\n`;
         }
 
         console.log(text);
