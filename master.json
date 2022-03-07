@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1646665631828
+  "date": 1646673096645
  },
  "custom": {
   "general": {
@@ -2049,6 +2049,10 @@
        ],
        [
         "BalanceObject",
+        "|"
+       ],
+       [
+        "ErrorObject",
         ">"
        ]
       ]
@@ -2094,6 +2098,10 @@
        ],
        [
         "BalanceObject",
+        "|"
+       ],
+       [
+        "ErrorObject",
         ">"
        ]
       ]
@@ -2139,6 +2147,10 @@
        ],
        [
         "BalanceObject",
+        "|"
+       ],
+       [
+        "ErrorObject",
         ">"
        ]
       ]
