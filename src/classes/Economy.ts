@@ -183,12 +183,14 @@ export class Economy {
 
       var moduleVersion = data["dist-tags"]["latest"];
       if (this.version !== moduleVersion) {
-        var { version, changelog, major } = await (
+        var github_data = await (
           await request(
             "https://raw.githubusercontent.com/bad-boy-discord/storage/master/discordjs-economy/update.json"
           )
-        ).body.json();
+        ).body.text();
 
+        var obj = JSON.stringify(github_data);
+        var { major, changelog, version } = JSON.parse(obj);
         var text = "";
 
         if (major) {
