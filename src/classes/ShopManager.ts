@@ -92,7 +92,12 @@ export class ShopManager {
       var item = data.shop.find((x) => x.id === itemID);
       if (!item) return res(false);
 
-      data.shop.filter((x) => x.id !== itemID);
+      data.shop = data.shop.filter((x) => x.id !== itemID);
+      data.shop = data.shop.map((v) => {
+        v.id -= 1;
+        return v;
+      });
+
       this.database.set(guildID, data);
 
       return res(true);

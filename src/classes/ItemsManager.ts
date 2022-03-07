@@ -71,14 +71,7 @@ export class ItemsManager {
       }
 
       var user = data.users.find((x) => x.id === userID);
-
       if (!user) user = await this.database.createUser(guildID, userID);
-      if (!user.inventory.length) {
-        return res({
-          status: false,
-          message: "User Inventory is Empty!",
-        });
-      }
 
       var item = data.shop.find((x) => x.id === itemID);
       if (!item) {
