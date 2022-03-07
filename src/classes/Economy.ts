@@ -42,9 +42,7 @@ export class Economy {
      * @type {Options}
      */
     this.options = options;
-
     if (!this.options.DBName) this.options.DBName = "economy";
-    if (!this.options.checkVersion) this.options.checkVersion = true;
 
     /**
      * Module Database
@@ -58,7 +56,7 @@ export class Economy {
      *
      * @type {string}
      */
-    this.version = "1.1.31";
+    this.version = "1.1.4";
 
     /**
      * Balance Manager
@@ -137,8 +135,6 @@ export class Economy {
    * @returns {Promise<boolean>}
    */
   private async init(): Promise<boolean> {
-    if (this.options.checkVersion === true) await this.checkVersion();
-
     return new Promise(async (res, rej) => {
       var economyOBJ = this.database.database.keys();
       var guildIDS: string[] = [];
@@ -166,49 +162,6 @@ export class Economy {
       return res(true);
     });
   }
-
-  /**
-   * Method that Check Module for Update.
-   *
-   * @private
-   * @returns {Promise<boolean|string>}
-   */
-  private checkVersion(): Promise<boolean> {
-    return new Promise(async (res, rej) => {
-      var data = await (
-        await request(
-          "https://registry.npmjs.com/@badboy-discord/discordjs-economy"
-        )
-      ).body.json();
-
-      var moduleVersion = data["dist-tags"]["latest"];
-      if (this.version !== moduleVersion) {
-        var { major, changelog, version } = await (
-          await request(
-            "https://raw.githubusercontent.com/bad-boy-discord/storage/master/discordjs-economy/update.json"
-          )
-        ).body.json();
-
-        var text = "";
-        if (major) {
-          var major_text = colors.red("major");
-          text += `New ${major_text} Version avaliable on NPMjs (v${version})!\n`;
-          text += `It is recommended to install it!\n`;
-          text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'\n`;
-          text += `Changes:\n`;
-          text += `${changelog}\n`;
-        } else {
-          text += `New Version avaliable on NPMjs (v${version})!\n`;
-          text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!\n`;
-          text += `Changes:\n`;
-          text += `${changelog}\n`;
-        }
-
-        console.log(text);
-        return res(true);
-      } else return res(true);
-    });
-  }
 }
 
 /**
@@ -216,7 +169,6 @@ export class Economy {
  * @typedef {Object} Options
  * @prop {string} [DBName] Economy Database Name
  * @prop {string} [DBPath] Economy Database Path
- * @prop {boolean} [checkVersion] Version Control Status
  * @prop {Rewards} rewards Economy Rewards
  */
 

@@ -1,7 +1,6 @@
 export interface Options {
   DBName?: string;
   DBPath?: string;
-  checkVersion?: boolean;
   rewards: Rewards;
 }
 
