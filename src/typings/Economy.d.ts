@@ -22,7 +22,7 @@ export declare interface Economy {
 export declare class Economy {
   constructor(options: Options);
 
-  leaderboard(guildID: string): Promise<boolean | Leaderboard[]>;
+  leaderboard(guildID: string): Promise<null | Leaderboard[]>;
 
   private init(): Promise<boolean>;
   private checkVersion(): Promise<boolean>;

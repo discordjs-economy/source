@@ -3,41 +3,41 @@ import { BalanceManager } from "./BalanceManager";
 import { DBManager } from "./DBManager";
 
 export declare interface ItemsManager {
-    options: Options;
-    database: DBManager;
+  options: Options;
+  database: DBManager;
 
-    balance: BalanceManager;
+  balance: BalanceManager;
 }
 
 export declare class ItemsManager {
-    constructor(options: Options);
+  constructor(options: Options);
 
-    buy(
-        guildID: string,
-        userID: string,
-        itemID: number
-    ): Promise<boolean|ErrorObject>;
+  buy(
+    guildID: string,
+    userID: string,
+    itemID: number
+  ): Promise<boolean | ErrorObject>;
 
-    sell(
-        guildID: string,
-        userID: string,
-        itemID: number
-    ): Promise<boolean|ErrorObject>;
+  sell(
+    guildID: string,
+    userID: string,
+    itemID: number
+  ): Promise<boolean | ErrorObject>;
 
-    use(
-        guildID: string,
-        userID: string,
-        itemID: number
-    ): Promise<EconomyGuildShopItem|ErrorObject>;
-    
-    get(
-        guildID: string,
-        userID: string,
-        itemID: number
-    ): Promise<EconomyGuildShopItem|ErrorObject>;
+  use(
+    guildID: string,
+    userID: string,
+    itemID: number
+  ): Promise<EconomyGuildShopItem | ErrorObject>;
 
-    all(
-        guildID: string,
-        userID: string
-    ): Promise<EconomyGuildShopItem[]|ErrorObject>;
+  get(
+    guildID: string,
+    userID: string,
+    itemID: number
+  ): Promise<EconomyGuildShopItem | ErrorObject>;
+
+  all(
+    guildID: string,
+    userID: string
+  ): Promise<EconomyGuildShopItem[] | ErrorObject>;
 }

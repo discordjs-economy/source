@@ -173,7 +173,7 @@ export class Economy {
    * @private
    * @returns {Promise<boolean|string>}
    */
-  private checkVersion(): Promise<boolean | string> {
+  private checkVersion(): Promise<boolean> {
     return new Promise(async (res, rej) => {
       var data = await (
         await request(
@@ -183,7 +183,7 @@ export class Economy {
 
       var moduleVersion = data["dist-tags"]["latest"];
       if (this.version !== moduleVersion) {
-        var update = await (
+        var { version, changelog, major } = await (
           await request(
             "https://raw.githubusercontent.com/bad-boy-discord/storage/master/discordjs-economy/update.json"
           )
@@ -191,19 +191,18 @@ export class Economy {
 
         var text = "";
 
-        if (update.major) {
-          text += `New ${colors.red("major")} Version avaliable on NPMjs (v${
-            update.version
-          })!\n`;
+        if (major) {
+          var major_text = colors.red("major");
+          text += `New ${major_text} Version avaliable on NPMjs (v${version})!\n`;
           text += `It is recommended to install it!\n`;
           text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!'\n`;
           text += `Changes:\n`;
-          text += `${update.changelog.join("\n")}\n\n`;
+          text += `${changelog.join("\n")}\n\n`;
         } else {
-          text += `New Version avaliable on NPMjs (v${update.version})!\n`;
+          text += `New Version avaliable on NPMjs (v${version})!\n`;
           text += `Use 'npm i @badboy-discord/discordjs-economy in console to update module!\n`;
           text += `Changes:\n`;
-          text += `${update.changelog.join("\n")}\n\n`;
+          text += `${changelog.join("\n")}\n\n`;
         }
 
         console.log(text);
