@@ -25,5 +25,5 @@ export declare class Economy {
   leaderboard(guildID: string): Promise<null | Leaderboard[]>;
 
   private init(): Promise<boolean>;
-  private checkVersion(): Promise<boolean>;
+  private checkForUpdates(): Promise<boolean | string>;
 }

@@ -136,6 +136,11 @@ export class Economy {
    */
   private async init(): Promise<boolean> {
     return new Promise(async (res, rej) => {
+      const updater = await this.checkForUpdates();
+      if (typeof updater === "string") {
+        console.log(updater);
+      }
+
       var economyOBJ = this.database.database.keys();
       var guildIDS: string[] = [];
 
@@ -160,6 +165,41 @@ export class Economy {
       }
 
       return res(true);
+    });
+  }
+
+  /**
+   * Method that checks module for an actual update.
+   *
+   * @private
+   * @returns {Promise<boolean|string>}
+   */
+  private checkForUpdates(): Promise<boolean | string> {
+    return new Promise(async (res, rej) => {
+      const { version: current_version } = await (
+        await import("../../package.json")
+      ).default;
+
+      const { "dist-tags": versions } = await (
+        await request(
+          "https://registry.npmjs.com/@badboy-discord/discordjs-economy"
+        )
+      ).body.json();
+
+      if (versions.latest !== current_version) {
+        const latest = versions.latest;
+        const name = "@badboy-discord/discordjs-economy";
+        const update_cmd = `npm install ${name}@latest`;
+        const text = [
+          "",
+          `New version of "${colors.yellow(name)}" avaliable (v${latest})!`,
+          "It is recommended to install because new version can contain fixes!",
+          `To upgrade, please write "${colors.yellow(update_cmd)}"`,
+          "",
+        ].join("\n");
+
+        return res(text);
+      } else return res(true);
     });
   }
 }

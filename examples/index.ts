@@ -12,7 +12,6 @@ const client = new Client({
 const eco = new Economy({
   DBName: "economy",
   DBPath: __dirname,
-  checkVersion: true,
   rewards: {
     daily: 150,
     weekly: 1050,
