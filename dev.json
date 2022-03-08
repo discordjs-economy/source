@@ -2,7 +2,7 @@
  "meta": {
   "generator": "0.11.1",
   "format": 22,
-  "date": 1646731671075
+  "date": 1646735219075
  },
  "custom": {
   "general": {
@@ -49,7 +49,7 @@
       ]
      ],
      "meta": {
-      "line": 22,
+      "line": 25,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
@@ -65,7 +65,23 @@
       ]
      ],
      "meta": {
-      "line": 30,
+      "line": 33,
+      "file": "BalanceManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "history",
+     "description": "History Manager",
+     "type": [
+      [
+       [
+        "HistoryManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
@@ -123,7 +139,7 @@
       ]
      ],
      "meta": {
-      "line": 38,
+      "line": 48,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
@@ -179,7 +195,7 @@
       ]
      ],
      "meta": {
-      "line": 71,
+      "line": 83,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
@@ -235,7 +251,7 @@
       ]
      ],
      "meta": {
-      "line": 104,
+      "line": 122,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
@@ -280,14 +296,14 @@
       ]
      ],
      "meta": {
-      "line": 137,
+      "line": 157,
       "file": "BalanceManager.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 9,
+    "line": 12,
     "file": "BalanceManager.ts",
     "path": "src/classes"
    }
@@ -323,7 +339,7 @@
       ]
      ],
      "meta": {
-      "line": 22,
+      "line": 25,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -339,7 +355,23 @@
       ]
      ],
      "meta": {
-      "line": 30,
+      "line": 33,
+      "file": "BankManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "history",
+     "description": "History Manager",
+     "type": [
+      [
+       [
+        "HistoryManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 40,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -397,7 +429,7 @@
       ]
      ],
      "meta": {
-      "line": 38,
+      "line": 48,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -453,7 +485,7 @@
       ]
      ],
      "meta": {
-      "line": 71,
+      "line": 83,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -509,7 +541,7 @@
       ]
      ],
      "meta": {
-      "line": 108,
+      "line": 122,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -554,7 +586,7 @@
       ]
      ],
      "meta": {
-      "line": 141,
+      "line": 157,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -610,7 +642,7 @@
       ]
      ],
      "meta": {
-      "line": 161,
+      "line": 177,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
@@ -666,14 +698,14 @@
       ]
      ],
      "meta": {
-      "line": 204,
+      "line": 220,
       "file": "BankManager.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 9,
+    "line": 12,
     "file": "BankManager.ts",
     "path": "src/classes"
    }
@@ -1324,7 +1356,7 @@
       ]
      ],
      "meta": {
-      "line": 230,
+      "line": 231,
       "file": "DBManager.ts",
       "path": "src/classes"
      }
@@ -1367,7 +1399,7 @@
       ]
      ],
      "meta": {
-      "line": 39,
+      "line": 41,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1383,7 +1415,7 @@
       ]
      ],
      "meta": {
-      "line": 47,
+      "line": 49,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1394,12 +1426,12 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ],
      "meta": {
-      "line": 54,
+      "line": 56,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1415,7 +1447,7 @@
       ]
      ],
      "meta": {
-      "line": 61,
+      "line": 63,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1431,7 +1463,7 @@
       ]
      ],
      "meta": {
-      "line": 68,
+      "line": 70,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1447,7 +1479,7 @@
       ]
      ],
      "meta": {
-      "line": 75,
+      "line": 77,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1463,7 +1495,7 @@
       ]
      ],
      "meta": {
-      "line": 82,
+      "line": 84,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1479,7 +1511,23 @@
       ]
      ],
      "meta": {
-      "line": 89,
+      "line": 91,
+      "file": "Economy.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "history",
+     "description": "History Manager",
+     "type": [
+      [
+       [
+        "HistoryManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 98,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1496,7 +1544,7 @@
        "type": [
         [
          [
-          "string"
+          "String"
          ]
         ]
        ]
@@ -1523,7 +1571,7 @@
       ]
      ],
      "meta": {
-      "line": 99,
+      "line": 108,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1546,7 +1594,7 @@
       ]
      ],
      "meta": {
-      "line": 131,
+      "line": 140,
       "file": "Economy.ts",
       "path": "src/classes"
      }
@@ -1566,21 +1614,266 @@
         "|"
        ],
        [
-        "string",
+        "String",
         ">"
        ]
       ]
      ],
      "meta": {
-      "line": 171,
+      "line": 180,
       "file": "Economy.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 27,
+    "line": 29,
     "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "HistoryManager",
+   "description": "HistoryManager Class",
+   "construct": {
+    "name": "HistoryManager",
+    "params": [
+     {
+      "name": "options",
+      "description": "Module Options",
+      "type": [
+       [
+        [
+         "Options"
+        ]
+       ]
+      ]
+     }
+    ]
+   },
+   "props": [
+    {
+     "name": "options",
+     "description": "Module Options",
+     "type": [
+      [
+       [
+        "Options"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 26,
+      "file": "HistoryManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "database",
+     "description": "Module Database",
+     "type": [
+      [
+       [
+        "DBManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 34,
+      "file": "HistoryManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "methods": [
+    {
+     "name": "create",
+     "description": "Method that creates history object in user's history",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "action",
+       "description": "Action",
+       "type": [
+        [
+         [
+          "ActionType"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "amount",
+       "description": "Amount",
+       "type": [
+        [
+         [
+          "Number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "EconomyUserHistory",
+        ">"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 42,
+      "file": "HistoryManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "delete",
+     "description": "Method that removes history object from user's history",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "id",
+       "description": "History Object ID",
+       "type": [
+        [
+         [
+          "number"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyUserHistory",
+        ">>"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 79,
+      "file": "HistoryManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "all",
+     "description": "Method that returns all the user's history",
+     "params": [
+      {
+       "name": "guildID",
+       "description": "Guild ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      },
+      {
+       "name": "userID",
+       "description": "User ID",
+       "type": [
+        [
+         [
+          "String"
+         ]
+        ]
+       ]
+      }
+     ],
+     "returns": [
+      [
+       [
+        "Promise",
+        "<"
+       ],
+       [
+        "boolean",
+        "|"
+       ],
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyUserHistory",
+        ">>"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 123,
+      "file": "HistoryManager.ts",
+      "path": "src/classes"
+     }
+    }
+   ],
+   "meta": {
+    "line": 14,
+    "file": "HistoryManager.ts",
     "path": "src/classes"
    }
   },
@@ -1615,7 +1908,7 @@
       ]
      ],
      "meta": {
-      "line": 25,
+      "line": 27,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1631,7 +1924,7 @@
       ]
      ],
      "meta": {
-      "line": 33,
+      "line": 35,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1647,7 +1940,23 @@
       ]
      ],
      "meta": {
-      "line": 40,
+      "line": 42,
+      "file": "ItemsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "history",
+     "description": "History Manager",
+     "type": [
+      [
+       [
+        "HistoryManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 49,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1709,7 +2018,7 @@
       ]
      ],
      "meta": {
-      "line": 48,
+      "line": 57,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1769,7 +2078,7 @@
       ]
      ],
      "meta": {
-      "line": 108,
+      "line": 118,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1829,7 +2138,7 @@
       ]
      ],
      "meta": {
-      "line": 159,
+      "line": 170,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1889,7 +2198,7 @@
       ]
      ],
      "meta": {
-      "line": 217,
+      "line": 228,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
@@ -1942,14 +2251,14 @@
       ]
      ],
      "meta": {
-      "line": 272,
+      "line": 283,
       "file": "ItemsManager.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 12,
+    "line": 14,
     "file": "ItemsManager.ts",
     "path": "src/classes"
    }
@@ -1985,7 +2294,7 @@
       ]
      ],
      "meta": {
-      "line": 26,
+      "line": 29,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2001,7 +2310,7 @@
       ]
      ],
      "meta": {
-      "line": 34,
+      "line": 37,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2017,7 +2326,7 @@
       ]
      ],
      "meta": {
-      "line": 41,
+      "line": 44,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2033,7 +2342,23 @@
       ]
      ],
      "meta": {
-      "line": 48,
+      "line": 51,
+      "file": "RewardsManager.ts",
+      "path": "src/classes"
+     }
+    },
+    {
+     "name": "history",
+     "description": "History Manager",
+     "type": [
+      [
+       [
+        "HistoryManager"
+       ]
+      ]
+     ],
+     "meta": {
+      "line": 58,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2084,7 +2409,7 @@
       ]
      ],
      "meta": {
-      "line": 56,
+      "line": 66,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2133,7 +2458,7 @@
       ]
      ],
      "meta": {
-      "line": 98,
+      "line": 109,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
@@ -2182,14 +2507,14 @@
       ]
      ],
      "meta": {
-      "line": 143,
+      "line": 161,
       "file": "RewardsManager.ts",
       "path": "src/classes"
      }
     }
    ],
    "meta": {
-    "line": 13,
+    "line": 16,
     "file": "RewardsManager.ts",
     "path": "src/classes"
    }
@@ -2494,7 +2819,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2506,7 +2831,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2524,7 +2849,7 @@
     }
    ],
    "meta": {
-    "line": 207,
+    "line": 216,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2546,7 +2871,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2557,7 +2882,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2568,7 +2893,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ],
       [
@@ -2577,7 +2902,7 @@
         "<"
        ],
        [
-        "number",
+        "Number",
         ">"
        ]
       ]
@@ -2585,7 +2910,7 @@
     }
    ],
    "meta": {
-    "line": 215,
+    "line": 224,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2630,7 +2955,7 @@
     }
    ],
    "meta": {
-    "line": 223,
+    "line": 232,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2652,7 +2977,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2663,7 +2988,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2674,7 +2999,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2705,10 +3030,26 @@
        ]
       ]
      ]
+    },
+    {
+     "name": "history",
+     "description": "User History",
+     "type": [
+      [
+       [
+        "Array",
+        "<"
+       ],
+       [
+        "EconomyUserHistory",
+        ">"
+       ]
+      ]
+     ]
     }
    ],
    "meta": {
-    "line": 230,
+    "line": 239,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2759,7 +3100,7 @@
     }
    ],
    "meta": {
-    "line": 240,
+    "line": 250,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2781,7 +3122,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2793,7 +3134,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2805,14 +3146,14 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 248,
+    "line": 258,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2834,7 +3175,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2845,7 +3186,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2857,7 +3198,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2868,7 +3209,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2880,7 +3221,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2891,14 +3232,14 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 256,
+    "line": 266,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2921,7 +3262,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2932,7 +3273,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2944,7 +3285,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -2955,7 +3296,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -2967,14 +3308,14 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 267,
+    "line": 277,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -2996,7 +3337,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3014,7 +3355,7 @@
     }
    ],
    "meta": {
-    "line": 277,
+    "line": 287,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3036,7 +3377,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3047,14 +3388,14 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 284,
+    "line": 294,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3076,7 +3417,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3105,7 +3446,7 @@
     }
    ],
    "meta": {
-    "line": 291,
+    "line": 301,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3127,7 +3468,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3138,14 +3479,14 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 299,
+    "line": 309,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3179,7 +3520,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -3198,7 +3539,7 @@
     }
    ],
    "meta": {
-    "line": 306,
+    "line": 316,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3220,7 +3561,7 @@
      "type": [
       [
        [
-        "string"
+        "String"
        ]
       ]
      ]
@@ -3231,7 +3572,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3242,7 +3583,7 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
@@ -3253,14 +3594,76 @@
      "type": [
       [
        [
-        "number"
+        "Number"
        ]
       ]
      ]
     }
    ],
    "meta": {
-    "line": 314,
+    "line": 324,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "EconomyUserHistory",
+   "description": "Economy User History",
+   "type": [
+    [
+     [
+      "Object"
+     ]
+    ]
+   ],
+   "props": [
+    {
+     "name": "id",
+     "description": "ID of the Object",
+     "type": [
+      [
+       [
+        "Number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "type",
+     "description": "Action",
+     "type": [
+      [
+       [
+        "ActionType"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "amount",
+     "description": "Amount",
+     "type": [
+      [
+       [
+        "Number"
+       ]
+      ]
+     ]
+    },
+    {
+     "name": "date",
+     "description": "Date",
+     "type": [
+      [
+       [
+        "Number"
+       ]
+      ]
+     ]
+    }
+   ],
+   "meta": {
+    "line": 333,
     "file": "Economy.ts",
     "path": "src/classes"
    }
@@ -3271,12 +3674,28 @@
    "type": [
     [
      [
-      "string"
+      "String"
      ]
     ]
    ],
    "meta": {
-    "line": 323,
+    "line": 342,
+    "file": "Economy.ts",
+    "path": "src/classes"
+   }
+  },
+  {
+   "name": "ActionType",
+   "description": "* daily\n* weekly\n* work\n* buy\n* sell\n* add\n* subtract\n* set\n* bank-add\n* bank-subtract\n* bank-set",
+   "type": [
+    [
+     [
+      "String"
+     ]
+    ]
+   ],
+   "meta": {
+    "line": 349,
     "file": "Economy.ts",
     "path": "src/classes"
    }
