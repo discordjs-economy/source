@@ -21,6 +21,7 @@ export interface EconomyUserData {
   bank: number;
   rewards: EconomyUserRewardsData;
   inventory: EconomyUserInventory[];
+  history: EconomyUserHistory[];
 }
 
 export interface EconomyUserRewardsData {
@@ -86,4 +87,23 @@ export interface Leaderboard {
   rank: number;
 }
 
+export interface EconomyUserHistory {
+  id: number;
+  type: ActionType;
+  amount: number;
+  date: number;
+}
+
 export type CooldownType = "daily" | "weekly" | "work";
+export type ActionType =
+  | "daily"
+  | "weekly"
+  | "work"
+  | "buy"
+  | "sell"
+  | "add"
+  | "subtract"
+  | "set"
+  | "bank-add"
+  | "bank-set"
+  | "bank-subtract";

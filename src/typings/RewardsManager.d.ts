@@ -7,6 +7,7 @@ import {
 import { BalanceManager } from "./BalanceManager";
 import { CooldownManager } from "./CooldownManager";
 import { DBManager } from "./DBManager";
+import { HistoryManager } from "./HistoryManager";
 
 export interface RewardsManager {
   options: Options;
@@ -14,6 +15,7 @@ export interface RewardsManager {
 
   balance: BalanceManager;
   cooldowns: CooldownManager;
+  history: HistoryManager;
 }
 
 export declare class RewardsManager {

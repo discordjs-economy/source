@@ -2,12 +2,15 @@ import { BalanceObject, ErrorObject, Options } from "../Constants";
 import { BalanceManager } from "./BalanceManager";
 import { CooldownManager } from "./CooldownManager";
 import { DBManager } from "./DBManager";
+import { HistoryManager } from "./HistoryManager";
 
 export interface RewardsManager {
   options: Options;
   database: DBManager;
+
   balance: BalanceManager;
   cooldowns: CooldownManager;
+  history: HistoryManager;
 }
 
 /**
@@ -51,6 +54,13 @@ export class RewardsManager {
      * @type {CooldownManager}
      */
     this.cooldowns = new CooldownManager(this.options);
+
+    /**
+     * History Manager
+     *
+     * @type {HistoryManager}
+     */
+    this.history = new HistoryManager(this.options);
   }
 
   /**
@@ -84,6 +94,7 @@ export class RewardsManager {
         this.options.rewards.daily
       );
 
+      this.history.create(guildID, userID, "daily", this.options.rewards.daily);
       this.cooldowns.create(
         "daily",
         this.options.rewards.daily,
@@ -126,6 +137,13 @@ export class RewardsManager {
       var balanceData = await this.balance.add(
         guildID,
         userID,
+        this.options.rewards.weekly
+      );
+
+      this.history.create(
+        guildID,
+        userID,
+        "weekly",
         this.options.rewards.weekly
       );
 
@@ -177,6 +195,7 @@ export class RewardsManager {
       } else toAdd = workReward;
 
       var balanceData = await this.balance.add(guildID, userID, toAdd);
+      this.history.create(guildID, userID, "work", toAdd);
       this.cooldowns.create("work", toAdd, guildID, userID);
 
       return res(balanceData);

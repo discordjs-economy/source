@@ -7,6 +7,7 @@ import { BankManager } from "./BankManager";
 import { ShopManager } from "./ShopManager";
 import { ItemsManager } from "./ItemsManager";
 import { RewardsManager } from "./RewardsManager";
+import { HistoryManager } from "./HistoryManager";
 
 export declare interface Economy {
   options: Options;
@@ -17,6 +18,7 @@ export declare interface Economy {
   shop: ShopManager;
   items: ItemsManager;
   rewards: RewardsManager;
+  history: HistoryManager;
 }
 
 export declare class Economy {

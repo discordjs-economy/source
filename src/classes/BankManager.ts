@@ -1,9 +1,12 @@
 import { BalanceObject, DepositObject, Options } from "../Constants";
 import { DBManager } from "./DBManager";
+import { HistoryManager } from "./HistoryManager";
 
 export interface BankManager {
   options: Options;
   database: DBManager;
+
+  history: HistoryManager;
 }
 
 /**
@@ -33,6 +36,13 @@ export class BankManager {
      * @type {DBManager}
      */
     this.database = new DBManager(this.options);
+
+    /**
+     * History Manager
+     *
+     * @type {HistoryManager}
+     */
+    this.history = new HistoryManager(this.options);
   }
 
   /**
@@ -56,6 +66,8 @@ export class BankManager {
 
       const newData = await this.database.get(guildID);
       const newUser = newData.users.find((x) => x.id === userID)!;
+
+      this.history.create(guildID, userID, "bank-add", amount);
 
       return res({
         amount: amount,
@@ -94,6 +106,8 @@ export class BankManager {
       const newData = await this.database.get(guildID);
       const newUser = newData.users.find((x) => x.id === userID)!;
 
+      this.history.create(guildID, userID, "bank-subtract", amount);
+
       return res({
         amount: amount,
 
@@ -126,6 +140,8 @@ export class BankManager {
 
       const newData = await this.database.get(guildID);
       const newUser = newData.users.find((x) => x.id === userID)!;
+
+      this.history.create(guildID, userID, "bank-set", value);
 
       return res({
         amount: value,

@@ -7,6 +7,7 @@ import { DBManager } from "./DBManager";
 import { ItemsManager } from "./ItemsManager";
 import { ShopManager } from "./ShopManager";
 import { RewardsManager } from "./RewardsManager";
+import { HistoryManager } from "./HistoryManager";
 
 // Other
 import { request } from "undici";
@@ -15,13 +16,14 @@ import colors from "colors";
 export interface Economy {
   options: Options;
   database: DBManager;
-  version: string;
+  version: String;
 
   balance: BalanceManager;
   bank: BankManager;
   shop: ShopManager;
   items: ItemsManager;
   rewards: RewardsManager;
+  history: HistoryManager;
 }
 
 /**
@@ -54,7 +56,7 @@ export class Economy {
     /**
      * Module Version
      *
-     * @type {string}
+     * @type {String}
      */
     this.version = "1.1.43";
 
@@ -93,13 +95,20 @@ export class Economy {
      */
     this.rewards = new RewardsManager(this.options);
 
+    /**
+     * History Manager
+     *
+     * @type {HistoryManager}
+     */
+    this.history = new HistoryManager(this.options);
+
     this.init();
   }
 
   /**
    * Method that Returns Guild Balance Leaderboard by Balance.
    *
-   * @param {string} guildID Guild ID
+   * @param {String} guildID Guild ID
    *
    * @returns {Promise<null|Leaderboard[]>}
    */
@@ -172,7 +181,7 @@ export class Economy {
    * Method that checks module for an actual update.
    *
    * @private
-   * @returns {Promise<boolean|string>}
+   * @returns {Promise<boolean|String>}
    */
   private checkForUpdates(): Promise<boolean | string> {
     return new Promise(async (res, rej) => {
@@ -207,17 +216,17 @@ export class Economy {
 /**
  * Module Options
  * @typedef {Object} Options
- * @prop {string} [DBName] Economy Database Name
- * @prop {string} [DBPath] Economy Database Path
+ * @prop {String} [DBName] Economy Database Name
+ * @prop {String} [DBPath] Economy Database Path
  * @prop {Rewards} rewards Economy Rewards
  */
 
 /**
  * Economy Rewards
  * @typedef {Object} Rewards
- * @prop {number} daily Daily Reward
- * @prop {number} weekly Weekly Reward
- * @prop {number|number[]} work Work Reward
+ * @prop {Number} daily Daily Reward
+ * @prop {Number} weekly Weekly Reward
+ * @prop {Number|Number[]} work Work Reward
  */
 
 /**
@@ -230,11 +239,12 @@ export class Economy {
 /**
  * Economy User Data
  * @typedef {Object} EconomyUserData
- * @prop {string} id User ID
- * @prop {number} balance User Balance
- * @prop {number} bank User Bank
+ * @prop {String} id User ID
+ * @prop {Number} balance User Balance
+ * @prop {Number} bank User Bank
  * @prop {EconomyUserRewardsData} rewards User Rewards
  * @prop {EconomyUserInventory[]} inventory User Inventory
+ * @prop {EconomyUserHistory[]} history User History
  */
 
 /**
@@ -248,50 +258,50 @@ export class Economy {
 /**
  * Economy User Reward Object
  * @typedef {Object} EconomyUserRewardObject
- * @prop {number} amount Amount
- * @prop {number} [collectedAt] Collected At
- * @prop {number} [collectAt] Collect At
+ * @prop {Number} amount Amount
+ * @prop {Number} [collectedAt] Collected At
+ * @prop {Number} [collectAt] Collect At
  */
 
 /**
  * Economy User Rewards Data
  * @typedef {Object} EconomyUserInventory
- * @prop {number} itemID Item ID
- * @prop {string} name Item Name
- * @prop {string} [description] Item Description
- * @prop {number} cost Item Cost
- * @prop {string} [role] Item Role
- * @prop {number} date Date of Purchase
+ * @prop {Number} itemID Item ID
+ * @prop {String} name Item Name
+ * @prop {String} [description] Item Description
+ * @prop {Number} cost Item Cost
+ * @prop {String} [role] Item Role
+ * @prop {Number} date Date of Purchase
  */
 
 /**
  * Economy Guild Shop Item
  * @typedef {Object} EconomyGuildShopItem
- * @prop {number} [id] Item ID
- * @prop {string} name Item Name
- * @prop {string} [description] Item Description
- * @prop {number} cost Item Cost
- * @prop {string} [role] Item Role
+ * @prop {Number} [id] Item ID
+ * @prop {String} name Item Name
+ * @prop {String} [description] Item Description
+ * @prop {Number} cost Item Cost
+ * @prop {String} [role] Item Role
  */
 
 /**
  * Balance Object for BalanceManager
  * @typedef {Object} BalanceObject
- * @prop {number} amount Amount
+ * @prop {Number} amount Amount
  * @prop {BalancePrettyObject} balance User Balance Object
  */
 
 /**
  * Pretty Object for BalanceObject
  * @typedef {Object} BalancePrettyObject
- * @prop {number} before Balance Before
- * @prop {number} after Balance After
+ * @prop {Number} before Balance Before
+ * @prop {Number} after Balance After
  */
 
 /**
  * Deposit Object for BankManager
  * @typedef {Object} DepositObject
- * @prop {number} amount Amount
+ * @prop {Number} amount Amount
  * @prop {BalancePrettyObject} balance User Balance Object
  * @prop {DepositPrettyObject} bank User Bank Object
  */
@@ -299,30 +309,54 @@ export class Economy {
 /**
  * Pretty Object for BalanceObject
  * @typedef {Object} DepositPrettyObject
- * @prop {number} before Before Deposit
- * @prop {number} after After Deposit
+ * @prop {Number} before Before Deposit
+ * @prop {Number} after After Deposit
  */
 
 /**
  * Error Object
  * @typedef {Object} ErrorObject
  * @prop {boolean} status true or false
- * @prop {string} [message] Error Message
+ * @prop {String} [message] Error Message
  * @prop {any} [data] Object with Data
  */
 
 /**
  * Guild Leaderboard
  * @typedef {Object} Leaderboard
- * @prop {string} userID User ID
- * @prop {number} balance User Balance
- * @prop {number} bank User Bank
- * @prop {number} rank User Rank in Leaderboard
+ * @prop {String} userID User ID
+ * @prop {Number} balance User Balance
+ * @prop {Number} bank User Bank
+ * @prop {Number} rank User Rank in Leaderboard
+ */
+
+/**
+ * Economy User History
+ * @typedef {Object} EconomyUserHistory
+ * @prop {Number} id ID of the Object
+ * @prop {ActionType} type Action
+ * @prop {Number} amount Amount
+ * @prop {Number} date Date
  */
 
 /**
  * * daily
  * * weekly
  * * work
- * @typedef {string} CooldownType
+ * @typedef {String} CooldownType
+ */
+
+/**
+ * * daily
+ * * weekly
+ * * work
+ * * buy
+ * * sell
+ * * add
+ * * subtract
+ * * set
+ * * bank-add
+ * * bank-subtract
+ * * bank-set
+ * @typedef {String} ActionType
  */
