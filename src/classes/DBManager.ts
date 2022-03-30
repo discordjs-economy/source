@@ -216,6 +216,7 @@ export class DBManager {
           },
         },
         inventory: [],
+        history: [],
       });
 
       this.set(guildID, data);

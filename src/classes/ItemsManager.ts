@@ -1,5 +1,6 @@
 import { EconomyGuildShopItem, ErrorObject, Options } from "../Constants";
 import { BalanceManager } from "./BalanceManager";
+import { HistoryManager } from "./HistoryManager";
 import { DBManager } from "./DBManager";
 
 export interface ItemsManager {
@@ -7,6 +8,7 @@ export interface ItemsManager {
   database: DBManager;
 
   balance: BalanceManager;
+  history: HistoryManager;
 }
 
 /**
@@ -43,6 +45,13 @@ export class ItemsManager {
      * @type {BalanceManager}
      */
     this.balance = new BalanceManager(this.options);
+
+    /**
+     * History Manager
+     *
+     * @type {HistoryManager}
+     */
+    this.history = new HistoryManager(this.options);
   }
 
   /**
@@ -89,6 +98,7 @@ export class ItemsManager {
       }
 
       this.balance.subtract(guildID, userID, item.cost);
+      this.history.create(guildID, userID, "buy", item.cost);
 
       user.inventory.push({
         itemID: item.id,
@@ -148,8 +158,9 @@ export class ItemsManager {
         });
       }
 
-      user.inventory.filter((x) => x.itemID !== itemID);
+      user.inventory = user.inventory.filter((x) => x.itemID !== itemID);
       this.balance.add(guildID, userID, item.cost);
+      this.history.create(guildID, userID, "sell", item.cost);
       this.database.set(guildID, data);
 
       return res(true);
@@ -207,7 +218,7 @@ export class ItemsManager {
         });
       }
 
-      user.inventory.filter((x) => x.itemID !== itemID);
+      user.inventory = user.inventory.filter((x) => x.itemID !== itemID);
       this.database.set(guildID, data);
 
       return res(itemInInventory);

@@ -1,6 +1,3 @@
 node_modules/
-tests/
-coverage/
 dist/
 examples/
-jest.config.js

@@ -1,12 +1,13 @@
 import { Leaderboard, Options } from "../Constants";
 
 // Managers
-import { DBManager } from "./DBManager";
 import { BalanceManager } from "./BalanceManager";
+import { RewardsManager } from "./RewardsManager";
+import { HistoryManager } from "./HistoryManager";
+import { ItemsManager } from "./ItemsManager";
 import { BankManager } from "./BankManager";
 import { ShopManager } from "./ShopManager";
-import { ItemsManager } from "./ItemsManager";
-import { RewardsManager } from "./RewardsManager";
+import { DBManager } from "./DBManager";
 
 export declare interface Economy {
   options: Options;
@@ -17,6 +18,7 @@ export declare interface Economy {
   shop: ShopManager;
   items: ItemsManager;
   rewards: RewardsManager;
+  history: HistoryManager;
 }
 
 export declare class Economy {
@@ -25,5 +27,5 @@ export declare class Economy {
   leaderboard(guildID: string): Promise<null | Leaderboard[]>;
 
   private init(): Promise<boolean>;
-  private checkVersion(): Promise<boolean>;
+  private checkForUpdates(): Promise<boolean | string>;
 }

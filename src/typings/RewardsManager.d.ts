@@ -4,8 +4,9 @@ import {
   ErrorObject,
   Options,
 } from "../Constants";
-import { BalanceManager } from "./BalanceManager";
 import { CooldownManager } from "./CooldownManager";
+import { HistoryManager } from "./HistoryManager";
+import { BalanceManager } from "./BalanceManager";
 import { DBManager } from "./DBManager";
 
 export interface RewardsManager {
@@ -14,6 +15,7 @@ export interface RewardsManager {
 
   balance: BalanceManager;
   cooldowns: CooldownManager;
+  history: HistoryManager;
 }
 
 export declare class RewardsManager {

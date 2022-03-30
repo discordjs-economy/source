@@ -1,6 +1,6 @@
 import { EconomyGuildShopItem, Options } from "../Constants";
-import { DBManager } from "./DBManager";
 import { BalanceManager } from "./BalanceManager";
+import { DBManager } from "./DBManager";
 
 export interface ShopManager {
   options: Options;

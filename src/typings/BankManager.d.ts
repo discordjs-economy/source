@@ -1,9 +1,11 @@
 import { Options, BalanceObject, DepositObject } from "../Constants";
+import { HistoryManager } from "./HistoryManager";
 import { DBManager } from "./DBManager";
 
 export declare interface BankManager {
   options: Options;
   database: DBManager;
+  history: HistoryManager;
 }
 
 export declare class BankManager {

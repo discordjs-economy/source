@@ -1,5 +1,6 @@
 import { EconomyGuildShopItem, ErrorObject, Options } from "../Constants";
 import { BalanceManager } from "./BalanceManager";
+import { HistoryManager } from "./HistoryManager";
 import { DBManager } from "./DBManager";
 
 export declare interface ItemsManager {
@@ -7,6 +8,7 @@ export declare interface ItemsManager {
   database: DBManager;
 
   balance: BalanceManager;
+  history: HistoryManager;
 }
 
 export declare class ItemsManager {

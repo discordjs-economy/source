@@ -1,9 +1,12 @@
 import { BalanceObject, Options } from "../Constants";
+import { HistoryManager } from "./HistoryManager";
 import { DBManager } from "./DBManager";
 
 export interface BalanceManager {
-    options: Options;
-    database: DBManager;
+  options: Options;
+  database: DBManager;
+
+  history: HistoryManager;
 }
 
 /**
@@ -13,144 +16,161 @@ export interface BalanceManager {
  * @classdesc Balance Class
  */
 export class BalanceManager {
+  /**
+   * @constructor
+   *
+   * @param {Options} options Module Options
+   */
+  constructor(options: Options) {
     /**
-     * @constructor
-     * 
-     * @param {Options} options Module Options
+     * Module Options
+     *
+     * @type {Options}
      */
-    constructor(options: Options) {
-        /**
-         * Module Options
-         * 
-         * @type {Options}
-         */
-        this.options = options;
-        if(!this.options.DBName) this.options.DBName = 'economy';
- 
-        /**
-          * Module Database
-          * 
-          * @type {DBManager}
-          */
-        this.database = new DBManager(this.options);
-    }
+    this.options = options;
+    if (!this.options.DBName) this.options.DBName = "economy";
 
     /**
-     * Method that Adds Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Add
-     * 
-     * @returns {Promise<BalanceObject>} 
+     * Module Database
+     *
+     * @type {DBManager}
      */
-    add(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
-        return new Promise(async (res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
-
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
-
-            this.database.add(guildID, userID, 'balance', amount);
-
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
-
-            return res({
-                amount: amount,
-
-                balance: {
-                    before: user.balance,
-                    after: newUser.balance
-                }
-            });
-        });
-    }
+    this.database = new DBManager(this.options);
 
     /**
-     * Method that Subtracts Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} amount Amount to Subtract
-     * 
-     * @returns {Promise<BalanceObject>} 
+     * History Manager
+     *
+     * @type {HistoryManager}
      */
-    subtract(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+    this.history = new HistoryManager(this.options);
+  }
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+  /**
+   * Method that Adds Balance to User.
+   *
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Add
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  add(guildID: string, userID: string, amount: number): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-            this.database.subtract(guildID, userID, 'balance', amount);
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+      this.database.add(guildID, userID, "balance", amount);
 
-            return res({
-                amount: amount,
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-                balance: {
-                    before: user.balance,
-                    after: newUser.balance
-                }
-            });
-        });
-    }
+      this.history.create(guildID, userID, "add", amount);
 
-    /**
-     * Method that Sets Balance to User.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * @param {number} value Value to Set
-     * 
-     * @returns {Promise<BalanceObject>} 
-     */
-    set(guildID: string, userID: string, value: number): Promise<BalanceObject> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+      return res({
+        amount: amount,
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+        balance: {
+          before: user.balance,
+          after: newUser.balance,
+        },
+      });
+    });
+  }
 
-            this.database.setProp(guildID, userID, 'balance', value);
+  /**
+   * Method that Subtracts Balance to User.
+   *
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Subtract
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  subtract(
+    guildID: string,
+    userID: string,
+    amount: number
+  ): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
 
-            const newData = await this.database.get(guildID);
-            const newUser = newData.users.find((x) => x.id === userID)!;
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
 
-            return res({
-                amount: value,
+      this.database.subtract(guildID, userID, "balance", amount);
 
-                balance: {
-                    before: user.balance,
-                    after: newUser.balance
-                }
-            });
-        });
-    }
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
 
-    /**
-     * Method that Returns User Balance.
-     * 
-     * @param {string} guildID Guild ID 
-     * @param {string} userID User ID
-     * 
-     * @returns {Promise<Number>} 
-     */
-    get(guildID: string, userID: string): Promise<number> {
-        return new Promise(async(res, rej) => {
-            var data = await this.database.get(guildID);
-            if(!data) data = await this.database.createGuild(guildID);
+      this.history.create(guildID, userID, "subtract", amount);
 
-            var user = data.users.find((x) => x.id === userID);
-            if(!user) user = await this.database.createUser(guildID, userID);
+      return res({
+        amount: amount,
 
-            return res(user.balance);
-        });
-    }
+        balance: {
+          before: user.balance,
+          after: newUser.balance,
+        },
+      });
+    });
+  }
+
+  /**
+   * Method that Sets Balance to User.
+   *
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} value Value to Set
+   *
+   * @returns {Promise<BalanceObject>}
+   */
+  set(guildID: string, userID: string, value: number): Promise<BalanceObject> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
+
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
+
+      this.database.setProp(guildID, userID, "balance", value);
+
+      const newData = await this.database.get(guildID);
+      const newUser = newData.users.find((x) => x.id === userID)!;
+
+      this.history.create(guildID, userID, "set", value);
+
+      return res({
+        amount: value,
+
+        balance: {
+          before: user.balance,
+          after: newUser.balance,
+        },
+      });
+    });
+  }
+
+  /**
+   * Method that Returns User Balance.
+   *
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   *
+   * @returns {Promise<Number>}
+   */
+  get(guildID: string, userID: string): Promise<number> {
+    return new Promise(async (res, rej) => {
+      var data = await this.database.get(guildID);
+      if (!data) data = await this.database.createGuild(guildID);
+
+      var user = data.users.find((x) => x.id === userID);
+      if (!user) user = await this.database.createUser(guildID, userID);
+
+      return res(user.balance);
+    });
+  }
 }
