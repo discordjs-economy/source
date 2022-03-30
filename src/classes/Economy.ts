@@ -2,12 +2,12 @@ import { Leaderboard, Options } from "../Constants";
 
 // Managers
 import { BalanceManager } from "./BalanceManager";
-import { BankManager } from "./BankManager";
-import { DBManager } from "./DBManager";
-import { ItemsManager } from "./ItemsManager";
-import { ShopManager } from "./ShopManager";
 import { RewardsManager } from "./RewardsManager";
 import { HistoryManager } from "./HistoryManager";
+import { ItemsManager } from "./ItemsManager";
+import { BankManager } from "./BankManager";
+import { ShopManager } from "./ShopManager";
+import { DBManager } from "./DBManager";
 
 // Other
 import { request } from "undici";

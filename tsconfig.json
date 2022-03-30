@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext"],
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ESNext",
@@ -13,9 +13,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "declaration": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
 
   "include": ["src"],
-  "exclude": ["node_modules", "examples", ".github", ".vscode", "pages"]
+  "exclude": ["node_modules"]
 }

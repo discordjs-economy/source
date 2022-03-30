@@ -1,8 +1,8 @@
 import { BalanceObject, ErrorObject, Options } from "../Constants";
-import { BalanceManager } from "./BalanceManager";
 import { CooldownManager } from "./CooldownManager";
-import { DBManager } from "./DBManager";
 import { HistoryManager } from "./HistoryManager";
+import { BalanceManager } from "./BalanceManager";
+import { DBManager } from "./DBManager";
 
 export interface RewardsManager {
   options: Options;
