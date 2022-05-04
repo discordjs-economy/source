@@ -40,9 +40,9 @@ export class CooldownManager {
    * Method that Creates Cooldown.
    *
    * @param {CooldownType} type Cooldown Type
-   * @param {Number} amount Amount
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {number} amount Amount
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
    * @returns {Promise<boolean>}
    */

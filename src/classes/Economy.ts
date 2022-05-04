@@ -16,7 +16,7 @@ import colors from "colors";
 export interface Economy {
   options: Options;
   database: DBManager;
-  version: String;
+  version: string;
 
   balance: BalanceManager;
   bank: BankManager;
@@ -35,6 +35,7 @@ export interface Economy {
 export class Economy {
   /**
    * @constructor
+   *
    * @param {Options} options Module Options
    */
   constructor(options: Options) {
@@ -56,9 +57,9 @@ export class Economy {
     /**
      * Module Version
      *
-     * @type {String}
+     * @type {string}
      */
-    this.version = "1.1.52";
+    this.version = "1.1.6";
 
     /**
      * Balance Manager
@@ -108,7 +109,7 @@ export class Economy {
   /**
    * Method that Returns Guild Balance Leaderboard by Balance.
    *
-   * @param {String} guildID Guild ID
+   * @param {string} guildID Guild ID
    *
    * @returns {Promise<null|Leaderboard[]>}
    */
@@ -181,24 +182,22 @@ export class Economy {
    * Method that checks module for an actual update.
    *
    * @private
-   * @returns {Promise<boolean|String>}
+   * @returns {Promise<boolean|string>}
    */
   private checkForUpdates(): Promise<boolean | string> {
     return new Promise(async (res, rej) => {
-      const { version: current_version } = await (
-        await import("../../package.json")
-      ).default;
-
       const { "dist-tags": versions } = await (
         await request(
           "https://registry.npmjs.com/@badboy-discord/discordjs-economy"
         )
       ).body.json();
 
-      if (versions.latest !== current_version) {
+      if (this.version === versions.latest) return res(true);
+      else {
         const latest = versions.latest;
         const name = "@badboy-discord/discordjs-economy";
         const update_cmd = `npm install ${name}@latest`;
+
         const text = [
           "",
           `New version of "${colors.yellow(name)}" avaliable (v${latest})!`,
@@ -208,7 +207,7 @@ export class Economy {
         ].join("\n");
 
         return res(text);
-      } else return res(true);
+      }
     });
   }
 }
@@ -216,17 +215,17 @@ export class Economy {
 /**
  * Module Options
  * @typedef {Object} Options
- * @prop {String} [DBName] Economy Database Name
- * @prop {String} [DBPath] Economy Database Path
+ * @prop {string} [DBName] Economy Database Name
+ * @prop {string} [DBPath] Economy Database Path
  * @prop {Rewards} rewards Economy Rewards
  */
 
 /**
  * Economy Rewards
  * @typedef {Object} Rewards
- * @prop {Number} daily Daily Reward
- * @prop {Number} weekly Weekly Reward
- * @prop {Number|Number[]} work Work Reward
+ * @prop {number} daily Daily Reward
+ * @prop {number} weekly Weekly Reward
+ * @prop {number|number[]} work Work Reward
  */
 
 /**
@@ -239,9 +238,9 @@ export class Economy {
 /**
  * Economy User Data
  * @typedef {Object} EconomyUserData
- * @prop {String} id User ID
- * @prop {Number} balance User Balance
- * @prop {Number} bank User Bank
+ * @prop {string} id User ID
+ * @prop {number} balance User Balance
+ * @prop {number} bank User Bank
  * @prop {EconomyUserRewardsData} rewards User Rewards
  * @prop {EconomyUserInventory[]} inventory User Inventory
  * @prop {EconomyUserHistory[]} history User History
@@ -258,50 +257,50 @@ export class Economy {
 /**
  * Economy User Reward Object
  * @typedef {Object} EconomyUserRewardObject
- * @prop {Number} amount Amount
- * @prop {Number} [collectedAt] Collected At
- * @prop {Number} [collectAt] Collect At
+ * @prop {number} amount Amount
+ * @prop {number} [collectedAt] Collected At
+ * @prop {number} [collectAt] Collect At
  */
 
 /**
  * Economy User Rewards Data
  * @typedef {Object} EconomyUserInventory
- * @prop {Number} itemID Item ID
- * @prop {String} name Item Name
- * @prop {String} [description] Item Description
- * @prop {Number} cost Item Cost
- * @prop {String} [role] Item Role
- * @prop {Number} date Date of Purchase
+ * @prop {number} itemID Item ID
+ * @prop {string} name Item Name
+ * @prop {string} [description] Item Description
+ * @prop {number} cost Item Cost
+ * @prop {string} [role] Item Role
+ * @prop {number} date Date of Purchase
  */
 
 /**
  * Economy Guild Shop Item
  * @typedef {Object} EconomyGuildShopItem
- * @prop {Number} [id] Item ID
- * @prop {String} name Item Name
- * @prop {String} [description] Item Description
- * @prop {Number} cost Item Cost
- * @prop {String} [role] Item Role
+ * @prop {number} [id] Item ID
+ * @prop {string} name Item Name
+ * @prop {string} [description] Item Description
+ * @prop {number} cost Item Cost
+ * @prop {string} [role] Item Role
  */
 
 /**
  * Balance Object for BalanceManager
  * @typedef {Object} BalanceObject
- * @prop {Number} amount Amount
+ * @prop {number} amount Amount
  * @prop {BalancePrettyObject} balance User Balance Object
  */
 
 /**
  * Pretty Object for BalanceObject
  * @typedef {Object} BalancePrettyObject
- * @prop {Number} before Balance Before
- * @prop {Number} after Balance After
+ * @prop {number} before Balance Before
+ * @prop {number} after Balance After
  */
 
 /**
  * Deposit Object for BankManager
  * @typedef {Object} DepositObject
- * @prop {Number} amount Amount
+ * @prop {number} amount Amount
  * @prop {BalancePrettyObject} balance User Balance Object
  * @prop {DepositPrettyObject} bank User Bank Object
  */
@@ -309,41 +308,41 @@ export class Economy {
 /**
  * Pretty Object for BalanceObject
  * @typedef {Object} DepositPrettyObject
- * @prop {Number} before Before Deposit
- * @prop {Number} after After Deposit
+ * @prop {number} before Before Deposit
+ * @prop {number} after After Deposit
  */
 
 /**
  * Error Object
  * @typedef {Object} ErrorObject
  * @prop {boolean} status true or false
- * @prop {String} [message] Error Message
+ * @prop {string} [message] Error Message
  * @prop {any} [data] Object with Data
  */
 
 /**
  * Guild Leaderboard
  * @typedef {Object} Leaderboard
- * @prop {String} userID User ID
- * @prop {Number} balance User Balance
- * @prop {Number} bank User Bank
- * @prop {Number} rank User Rank in Leaderboard
+ * @prop {string} userID User ID
+ * @prop {number} balance User Balance
+ * @prop {number} bank User Bank
+ * @prop {number} rank User Rank in Leaderboard
  */
 
 /**
  * Economy User History
  * @typedef {Object} EconomyUserHistory
- * @prop {Number} id ID of the Object
+ * @prop {number} id ID of the Object
  * @prop {ActionType} type Action
- * @prop {Number} amount Amount
- * @prop {Number} date Date
+ * @prop {number} amount Amount
+ * @prop {number} date Date
  */
 
 /**
  * * daily
  * * weekly
  * * work
- * @typedef {String} CooldownType
+ * @typedef {string} CooldownType
  */
 
 /**
@@ -358,5 +357,5 @@ export class Economy {
  * * bank-add
  * * bank-subtract
  * * bank-set
- * @typedef {String} ActionType
+ * @typedef {string} ActionType
  */

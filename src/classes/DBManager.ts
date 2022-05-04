@@ -42,7 +42,7 @@ export class DBManager {
   /**
    * Method that Returns Economy Guild Data from Database
    *
-   * @param {String} id Discord Guild ID
+   * @param {string} id Discord Guild ID
    * @returns {Promise<EconomyGuildData>}
    */
   get(id: string): Promise<EconomyGuildData> {
@@ -57,7 +57,7 @@ export class DBManager {
   /**
    * Method that Changes Something from Database
    *
-   * @param {String} id Discord Guild ID
+   * @param {string} id Discord Guild ID
    * @param {any} value Value to Set
    *
    * @returns {Promise<boolean>}
@@ -103,7 +103,7 @@ export class DBManager {
   /**
    * Method that Pushes Something from Database
    *
-   * @param {id} id Discord Guild ID
+   * @param {string} id Discord Guild ID
    * @param {any} value Value to Push
    *
    * @returns {Promise<boolean>}

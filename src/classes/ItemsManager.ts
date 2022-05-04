@@ -57,9 +57,9 @@ export class ItemsManager {
   /**
    * Method that Buys an Item from Shop.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} itemID Item ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} itemID Item ID
    *
    * @returns {Promise<boolean|ErrorObject>}
    */
@@ -118,9 +118,9 @@ export class ItemsManager {
   /**
    * Method that Sells an Item from Inventory.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} itemID Item ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} itemID Item ID
    *
    * @returns {Promise<boolean|ErrorObject>}
    */
@@ -170,9 +170,9 @@ export class ItemsManager {
   /**
    * Method that Uses an Item from Inventory.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} itemID Item ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} itemID Item ID
    *
    * @returns {Promise<EconomyGuildShopItem|ErrorObject>}
    */
@@ -228,9 +228,9 @@ export class ItemsManager {
   /**
    * Method that Returns an Item Data from Inventory.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} itemID Item ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} itemID Item ID
    *
    * @returns {Promise<EconomyGuildShopItem|ErrorObject>}
    */
@@ -283,8 +283,8 @@ export class ItemsManager {
   /**
    * Method that Returns All the Items from Inventory.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
    * @returns {Promise<EconomyGuildShopItem[]|ErrorObject>}
    */

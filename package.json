@@ -1,13 +1,14 @@
 {
   "name": "@badboy-discord/discordjs-economy",
-  "version": "1.1.52",
+  "version": "1.2.0",
   "description": "A module that will simplify creating Economy System for Your Discord Bot.",
   "main": "dist/src/index.js",
   "types": "src/typings/Economy.d.ts",
   "scripts": {
     "postinstall": "tsc -p tsconfig.json",
     "docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json",
-    "publish:dev": "npm publish --tag dev"
+    "publish:dev": "npm publish --tag dev",
+    "deploy": "git add . && gitmoji -c"
   },
   "repository": "git+https://github.com/discordjs-economy/source.git",
   "keywords": [
@@ -23,20 +24,21 @@
   "homepage": "https://djs-economy.js.org",
   "dependencies": {
     "colors": "^1.4.0",
-    "enmap": "^5.8.13",
-    "typescript": "^4.6.3",
-    "undici": "^5.0.0"
+    "enmap": "^5.9.0",
+    "typescript": "^4.6.4",
+    "undici": "^5.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
+    "@babel/core": "^7.17.10",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
     "@distube/docgen": "distubejs/docgen",
     "@types/colors": "^1.2.1",
-    "@types/node": "^17.0.23",
-    "jsdoc-babel": "^0.5.0"
+    "@types/node": "^17.0.31",
+    "jsdoc-babel": "^0.5.0",
+    "npm-check-updates": "^12.5.11"
   },
   "engines": {
     "node": ">=14"

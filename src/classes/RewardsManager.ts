@@ -66,8 +66,8 @@ export class RewardsManager {
   /**
    * Method that Adds Daily Reward to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
    * @returns {Promise<BalanceObject|ErrorObject>}
    */
@@ -109,8 +109,8 @@ export class RewardsManager {
   /**
    * Method that Adds Weekly Reward to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
    * @returns {Promise<BalanceObject|ErrorObject>}
    */
@@ -161,8 +161,8 @@ export class RewardsManager {
   /**
    * Method that Adds Work Reward to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
    * @returns {Promise<BalanceObject|ErrorObject>}
    */

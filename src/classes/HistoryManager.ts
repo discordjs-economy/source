@@ -20,6 +20,7 @@ export interface HistoryManager {
 export class HistoryManager {
   /**
    * @constructor
+   *
    * @param {Options} options Module Options
    */
   constructor(options: Options) {
@@ -42,10 +43,10 @@ export class HistoryManager {
   /**
    * Method that creates history object in user's history
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    * @param {ActionType} action Action
-   * @param {Number} amount Amount
+   * @param {number} amount Amount
    *
    * @returns {Promise<EconomyUserHistory>}
    */
@@ -79,8 +80,8 @@ export class HistoryManager {
   /**
    * Method that removes history object from user's history
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    * @param {number} id History Object ID
    *
    * @returns {Promise<boolean|EconomyUserHistory[]>}
@@ -123,10 +124,10 @@ export class HistoryManager {
   /**
    * Method that returns all the user's history
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
-   * @returns {Promise<boolean | EconomyUserHistory[]>}
+   * @returns {Promise<boolean|EconomyUserHistory[]>}
    */
   all(
     guildID: string,

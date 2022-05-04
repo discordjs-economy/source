@@ -47,7 +47,7 @@ export class ShopManager {
   /**
    * Method that Creates Item for Shop
    *
-   * @param {String} guildID Guild ID
+   * @param {string} guildID Guild ID
    * @param {EconomyGuildShopItem} data
    *
    * @returns {Promise<EconomyGuildShopItem>}
@@ -79,8 +79,8 @@ export class ShopManager {
   /**
    * Method that Deletes Item from Shop
    *
-   * @param {String} guildID Guild ID
-   * @param {Number} itemID Item ID
+   * @param {string} guildID Guild ID
+   * @param {number} itemID Item ID
    *
    * @returns {Promise<boolean>}
    */
@@ -107,9 +107,9 @@ export class ShopManager {
   /**
    * Method that Change Something in Item from Shop
    *
-   * @param {String} guildID Guild ID
-   * @param {Number} itemID Item ID
-   * @param {String} key Key to Change
+   * @param {string} guildID Guild ID
+   * @param {number} itemID Item ID
+   * @param {string} key Key to Change
    * @param {any} value Value to Change
    *
    * @returns {Promise<boolean | EconomyGuildShopItem>}
@@ -139,7 +139,7 @@ export class ShopManager {
   /**
    * Method that Returns All the Items from Shop
    *
-   * @param {String} guildID Guild ID
+   * @param {string} guildID Guild ID
    * @returns {Promise<boolean | EconomyGuildShopItem[]>}
    */
   all(guildID: string): Promise<boolean | EconomyGuildShopItem[]> {

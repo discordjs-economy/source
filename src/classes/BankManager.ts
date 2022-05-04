@@ -48,9 +48,9 @@ export class BankManager {
   /**
    * Method that Adds Bank Balance to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} amount Amount to Add
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Add
    *
    * @returns {Promise<BalanceObject>}
    */
@@ -83,9 +83,9 @@ export class BankManager {
   /**
    * Method that Subtracts Bank Balance to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} amount Amount to Subtract
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Subtract
    *
    * @returns {Promise<BalanceObject>}
    */
@@ -122,9 +122,9 @@ export class BankManager {
   /**
    * Method that Sets Bank Balance to User.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} value Value to Set
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} value Value to Set
    *
    * @returns {Promise<BalanceObject>}
    */
@@ -157,10 +157,10 @@ export class BankManager {
   /**
    * Method that Returns User Bank.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
    *
-   * @returns {Promise<Number>}
+   * @returns {Promise<number>}
    */
   get(guildID: string, userID: string): Promise<number> {
     return new Promise(async (res, rej) => {
@@ -177,9 +177,9 @@ export class BankManager {
   /**
    * Method that Deposits to Bank.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} amount Amount to Deposit
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Deposit
    *
    * @returns {Promise<BalanceObject>}
    */
@@ -220,9 +220,9 @@ export class BankManager {
   /**
    * Method that Withdraws from Bank.
    *
-   * @param {String} guildID Guild ID
-   * @param {String} userID User ID
-   * @param {Number} amount Amount to Withdraw
+   * @param {string} guildID Guild ID
+   * @param {string} userID User ID
+   * @param {number} amount Amount to Withdraw
    *
    * @returns {Promise<BalanceObject>}
    */
