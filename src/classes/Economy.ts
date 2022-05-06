@@ -59,7 +59,7 @@ export class Economy {
      *
      * @type {string}
      */
-    this.version = "1.1.6";
+    this.version = "1.2.1";
 
     /**
      * Balance Manager
