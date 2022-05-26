@@ -1,9 +1,9 @@
 {
-  "name": "discordjs-economy",
+  "name": "@badboy-discord/discordjs-economy",
   "version": "1.2.2",
   "description": "A module that will simplify creating Economy System for Your Discord Bot.",
   "main": "dist/index.js",
-  "types": "dist/typings/Economy.d.ts",
+  "types": "src/typings/Economy.d.ts",
   "scripts": {
     "postinstall": "tsc -p tsconfig.json",
     "docs": "docgen -s src/*.ts src/**/*.ts -o docs/docs.json -c pages/index.yml -g -S 1 -j .jsconfig.json",
