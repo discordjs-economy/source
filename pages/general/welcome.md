@@ -1,6 +1,6 @@
 ## Welcome!
 
-<strong>Welcome, this is 'discordjs-economy' module!</strong> <br />
+<strong>Welcome, this is '@badboy-discord/discordjs-economy' module!</strong> <br />
 <strong>discordjs-economy will simplify creating Economy System for Your Discord Bot!</strong>
 
 <strong>[Documentation](https://djs-economy.js.org/) | [Support Server](https://discord.gg/zsTgXs24k2)</strong>

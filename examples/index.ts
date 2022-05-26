@@ -3,7 +3,7 @@
  */
 
 import { Client, MessageEmbed } from "discord.js";
-import { Economy } from "../src/index";
+import { Economy } from "../src/index"; // replace with "@badboy-discord/discordjs-economy"
 
 const client = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
